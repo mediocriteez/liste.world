@@ -1,5 +1,6 @@
 "use client"
 
+import PageLoader from "@/components/PageLoader"
 import { usePathname, useRouter } from "next/navigation"
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
 

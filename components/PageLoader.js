@@ -3,3 +3,5 @@ const PageLoader = () => {
         <p>loading...</p>
     )
 }
+
+export default PageLoader
