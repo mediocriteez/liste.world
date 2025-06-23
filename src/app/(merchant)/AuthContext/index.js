@@ -13,6 +13,7 @@ const AuthContext = ({children}) => {
     const pathName = usePathname()
 
     const [session, setSession] = useState(undefined)
+    const [fetchingSession, setFetchingSession] = useState(true)
     
     const fetchSession = useCallback(async () => {
         try {
@@ -41,6 +42,8 @@ const AuthContext = ({children}) => {
         
         if(session && isAuthRoute) router.replace('/dashboard')
 
+        setFetchingSession(false)
+
     }, [session])
 
     const value = {
@@ -50,7 +53,7 @@ const AuthContext = ({children}) => {
     return(
         <Context.Provider value={value}>
             
-            {session === undefined
+            {fetchingSession
                 ?
                 <PageLoader />
                 :
