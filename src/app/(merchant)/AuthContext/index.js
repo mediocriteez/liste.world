@@ -10,9 +10,10 @@ const Context = createContext()
 const AuthContext = ({children}) => {
 
     const router = useRouter()
+    router.prefetch('/login')
+    router.prefetch('/dashboard')
     const pathName = usePathname()
 
-    const [loading, setLoading] = useState(true)
     const [session, setSession] = useState(undefined)
     
     const fetchSession = useCallback(async () => {
@@ -37,7 +38,6 @@ const AuthContext = ({children}) => {
         
         if(session && isAuthRoute) router.replace('/dashboard')
 
-        setLoading(false)
     }, [session])
 
     const value = {
@@ -47,7 +47,7 @@ const AuthContext = ({children}) => {
     return(
         <Context.Provider value={value}>
             
-            {loading
+            {session === undefined
                 ?
                 <PageLoader />
                 :
