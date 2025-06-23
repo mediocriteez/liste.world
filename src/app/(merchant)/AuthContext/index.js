@@ -10,8 +10,6 @@ const Context = createContext()
 const AuthContext = ({children}) => {
 
     const router = useRouter()
-    router.prefetch('/login')
-    router.prefetch('/dashboard')
     const pathName = usePathname()
 
     const [session, setSession] = useState(undefined)
@@ -24,6 +22,11 @@ const AuthContext = ({children}) => {
         } catch (error) {
             console.error(error)
         }
+    }, [])
+
+    useEffect(() => {
+        router.prefetch('/login')
+        router.prefetch('/dashboard')
     }, [])
 
     useEffect(() => {
