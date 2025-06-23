@@ -12,7 +12,7 @@ const AuthContext = ({children}) => {
     const router = useRouter()
     const pathName = usePathname()
 
-    const [session, setSession] = useState()
+    const [session, setSession] = useState(undefined)
     
     const fetchSession = useCallback(async () => {
         try {
@@ -44,7 +44,7 @@ const AuthContext = ({children}) => {
     return(
         <Context.Provider value={value}>
             
-            {session === null 
+            {session === undefined 
                 ?
                 <PageLoader />
                 :
