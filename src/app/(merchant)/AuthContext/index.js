@@ -1,6 +1,7 @@
 "use client"
 
 import PageLoader from "@/components/PageLoader"
+import { supabase } from "@/services/supabase/client"
 import { usePathname, useRouter } from "next/navigation"
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
 
