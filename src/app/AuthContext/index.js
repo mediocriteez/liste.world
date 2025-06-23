@@ -9,8 +9,7 @@ const Context = createContext()
 
 const AuthContext = ({children}) => {
 
-    const router = useRouter()
-    const pathName = usePathname()
+    
 
     const [session, setSession] = useState(undefined)
     const [fetchingSession, setFetchingSession] = useState(true)
@@ -23,47 +22,26 @@ const AuthContext = ({children}) => {
         } catch (error) {
             console.error(error)
         }
-    }, [])
 
-    useEffect(() => {
-        router.prefetch('/login')
-        router.prefetch('/dashboard')
+        setFetchingSession(false)
     }, [])
 
     useEffect(() => {
         fetchSession()
     }, [])
 
-    useEffect(() => {
-
-        const isAuthRoute = pathName.startsWith("/auth")
-
-        if(session === null && !isAuthRoute) router.push(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
-        
-        if(session && isAuthRoute) router.replace('/dashboard')
-
-        setFetchingSession(false)
-
-    }, [session])
-
     const value = {
+        fetchingSession,
         session
     }
 
     return(
         <Context.Provider value={value}>
-            
-            {fetchingSession
-                ?
-                <PageLoader />
-                :
-                children
-            }
-
+            {children}
         </Context.Provider>
     )
 }
 
-const useAuthContext = () => useContext(Context)
+export const useAuthContext = () => useContext(Context)
 
 export default AuthContext

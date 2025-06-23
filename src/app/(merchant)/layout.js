@@ -1,4 +1,4 @@
-import AuthContext from "./AuthContext"
+import AuthContext from "./AuthGate"
 
 const Layout = ({children}) => {
     return(
