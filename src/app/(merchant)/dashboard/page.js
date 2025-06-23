@@ -3,3 +3,5 @@ const MerchantDashboard = ({}) => {
         <main>dashboard</main>
     )
 }
+
+export default MerchantDashboard
