@@ -3,7 +3,7 @@
 import { useAuthContext } from "@/app/AuthContext"
 import PageLoader from "@/components/PageLoader"
 import { usePathname, useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const AuthGate = ({children}) => {
 

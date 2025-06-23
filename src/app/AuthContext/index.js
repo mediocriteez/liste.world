@@ -1,15 +1,11 @@
 "use client"
 
-import PageLoader from "@/components/PageLoader"
 import { supabase } from "@/services/supabase/client"
-import { usePathname, useRouter } from "next/navigation"
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
 
 const Context = createContext()
 
 const AuthContext = ({children}) => {
-
-    
 
     const [session, setSession] = useState(undefined)
     const [fetchingSession, setFetchingSession] = useState(true)
