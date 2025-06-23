@@ -12,6 +12,7 @@ const AuthContext = ({children}) => {
     const router = useRouter()
     const pathName = usePathname()
 
+    const [loading, setLoading] = useState(true)
     const [session, setSession] = useState(undefined)
     
     const fetchSession = useCallback(async () => {
@@ -35,6 +36,8 @@ const AuthContext = ({children}) => {
         if(session === null && !isAuthRoute) router.push(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
         
         if(session && isAuthRoute) router.replace('/dashboard')
+
+        setLoading(false)
     }, [session])
 
     const value = {
@@ -44,7 +47,7 @@ const AuthContext = ({children}) => {
     return(
         <Context.Provider value={value}>
             
-            {session === undefined 
+            {loading
                 ?
                 <PageLoader />
                 :
