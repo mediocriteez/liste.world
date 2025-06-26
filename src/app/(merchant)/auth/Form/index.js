@@ -1,10 +1,13 @@
-const AuthForm = ({schema}) => {
+import ErrorLabel from "@/components/ErrorLabel"
+
+const AuthForm = ({schema, onSubmit, confirmPass = false}) => {
 
     const {
         register,
         handleSubmit,
         formState: {
             errors,
+            touched,
             isSubmitting
         }
     } = useForm({
@@ -12,8 +15,22 @@ const AuthForm = ({schema}) => {
     })
 
     return(
-        <form>
-
+        <form onSubmit={onSubmit}>
+            <ErrorLabel>
+                <span>email</span>
+                <input type="email" name="email" {...register('email')} />
+            </ErrorLabel>
+            <ErrorLabel>
+                <span>password</span>
+                <input type="email" name="email" {...register('password')} />
+            </ErrorLabel>
+            {confirmPass &&
+                <ErrorLabel>
+                    <span>confirm password</span>
+                    <input type="email" name="email" {...register('confirmPassword')} />
+                </ErrorLabel>
+            }
+            
         </form>
     )
 }
