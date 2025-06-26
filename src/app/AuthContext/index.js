@@ -6,29 +6,40 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 const Context = createContext()
 
 const AuthContext = ({children}) => {
-
+    const [user, setUser] = useState(undefined)
     const [session, setSession] = useState(undefined)
     const [fetchingSession, setFetchingSession] = useState(true)
-    
-    const fetchSession = useCallback(async () => {
-        try {
-            const { data, error } = await supabase.auth.getSession()
-            if(error) throw error
-            setSession(data.session)
-        } catch (error) {
-            console.error(error)
-        }
-
-        setFetchingSession(false)
-    }, [])
 
     useEffect(() => {
-        fetchSession()
+
+        const { data } = supabase.auth.onAuthStateChange((event, session) => {
+            console.log(event, session)
+            if (event === 'INITIAL_SESSION') {
+                // handle initial session
+                setSession(session)
+                setFetchingSession(false)
+            } else if (event === 'SIGNED_IN') {
+                // handle sign in event
+                setSession(session)
+            } else if (event === 'SIGNED_OUT') {
+                setUser(null)
+                setSession(null)
+            } else if (event === 'PASSWORD_RECOVERY') {
+                // handle password recovery event
+            } else if (event === 'TOKEN_REFRESHED') {
+                // handle token refreshed event
+            } else if (event === 'USER_UPDATED') {
+                // handle user updated event
+            }
+        })
+
+        return () => data.subscription.unsubscribe()
     }, [])
 
     const value = {
         fetchingSession,
-        session
+        session,
+        setSession
     }
 
     return(

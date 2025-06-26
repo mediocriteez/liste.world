@@ -3,7 +3,7 @@ const ErrorLabel = ({error, children, ...props}) => {
         <label {...props}>
             {children}
             {error &&
-                <p>{error}</p>
+                <span>{error}</span>
             }
         </label>
     )

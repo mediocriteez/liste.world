@@ -1,25 +1,18 @@
 "use client"
 
-import { useState } from "react"
-import { z } from "zod"
+import { useCallback, useState } from "react"
+import { schema } from "./zod"
 import PasswordLiveCheck from "./PasswordLiveCheck"
-
-const schema = z.object({
-    email: z.string().email("Invalid email"),
-    password: z.string()
-                .min(8, "Password must be at least 8 characters")
-                .min(8, "Password must be at least 8 characters")
-                .regex(/[A-Z]/, "Must include at least one uppercase letter")
-                .regex(/[a-z]/, "Must include at least one lowercase letter")
-                .regex(/[!@#$%^&*]/, "Must include at least one special character (!@#$%^&*)")
-                .regex(/^[A-Za-z0-9!@#$%^&*]+$/, "Only letters, numbers, and !@#$%^&* are allowed"),
-})
-.refine((data) => data.password === data.confirmPassword, {
-    message: 'Passwords do not match',
-    path: ['confirmPassword']
-})
+import { supabase } from "@/services/supabase/client"
+import { useRouter } from "next/navigation"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import ErrorLabel from "@/components/ErrorLabel"
+// import { createNewUser as onSubmit } from "./actions"
 
 const Signup = () => {
+
+    const router = useRouter()
 
     const [formError , setFormError] = useState()
 
@@ -29,31 +22,62 @@ const Signup = () => {
         handleSubmit,
         formState: {
             errors,
-            touched,
             isSubmitting
         }
     } = useForm({
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schema),
+        mode: 'onBlur'
     })
 
-    const password = watch('password')
+    const [password, confirmPassword] = watch(['password', 'confirmPassword'])
+
+    const onSubmit = useCallback(async (formData, something ) => {
+        try {
+
+            const {data, error} = await supabase.auth.signUp({
+                phone: '1' + formData.phone,
+                password: formData.password,
+                options: {
+                    channel: 'sms'
+                }
+            })
+
+            if(error) throw error
+
+            const phone = data?.user?.phone
+
+            router.push(`/auth/2fa?id=${phone}&signup`)
+
+        } catch (error) {
+            console.error(error)
+            setFormError(error.message)
+        }
+    }, [])
 
     return(
         <main>
-            <form onSubmit={onSubmit}>
-                <ErrorLabel error={errors.email}>
-                    <span>email</span>
-                    <input type="email" name="email" {...register('email')} />
+            <form onSubmit={handleSubmit(onSubmit, () => setFormError('Review errors and try again'))}>
+                <ErrorLabel error={errors?.phone?.message}>
+                    <span>phone number</span>
+                    <span>
+                        <span>+1</span>
+                        <input type="text" name="phone" {...register('phone')} />
+                    </span>
                 </ErrorLabel>
                 <ErrorLabel>
                     <span>password</span>
-                    <input type="email" name="email" {...register('password')} />
+                    <input type="text" name="password" {...register('password')} />
                 </ErrorLabel>
                 <PasswordLiveCheck password={password}/>
                 <ErrorLabel>
                     <span>confirm password</span>
-                    <input type="email" name="email" {...register('confirmPassword')} />
+                    <input type="text" name="confirm-password" {...register('confirmPassword')} />
                 </ErrorLabel>
+                <p>passwords match {password === confirmPassword ? ':)' : 'X'}</p>
+                {formError &&
+                    <p>{formError}</p>
+                }
+                <button type="submit">Sign Up</button>
             </form>
         </main>
     )

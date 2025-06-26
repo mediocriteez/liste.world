@@ -3,7 +3,7 @@
 import { useAuthContext } from "@/app/AuthContext"
 import PageLoader from "@/components/PageLoader"
 import { usePathname, useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 const AuthGate = ({children}) => {
 
@@ -14,6 +14,7 @@ const AuthGate = ({children}) => {
 
     const router = useRouter()
     const pathName = usePathname()
+    const isAuthRoute = useMemo(() => pathName.startsWith("/auth"), [pathName])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -25,8 +26,6 @@ const AuthGate = ({children}) => {
 
         if(fetchingSession) return
 
-        const isAuthRoute = pathName.startsWith("/auth")
-
         if(session === null && !isAuthRoute) router.push(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
         
         if(session && isAuthRoute) router.replace('/dashboard')
@@ -37,7 +36,7 @@ const AuthGate = ({children}) => {
 
     return( 
         <>
-            {loading
+            {loading && !isAuthRoute
                 ?
                 <PageLoader />
                 :

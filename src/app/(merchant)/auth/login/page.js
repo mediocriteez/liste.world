@@ -1,10 +1,13 @@
 "use client"
 
+import { useAuthContext } from "@/app/AuthContext"
+import ErrorLabel from "@/components/ErrorLabel"
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 
 const Login = () => {
 
-    const [formError , setFormError] = useState()
+    const [formError , setFormError] = useState('')
 
      const {
         register,
@@ -13,6 +16,8 @@ const Login = () => {
             isSubmitting
         }
     } = useForm()
+
+    const {setSession} = useAuthContext()
 
     return(
         <main>
@@ -25,7 +30,7 @@ const Login = () => {
                     <span>password</span>
                     <input type="email" name="email" {...register('password')} />
                 </ErrorLabel>
-                
+                <button type="submit">Log In</button>
                 {formError &&
                     <p>{formError}</p>
                 }
