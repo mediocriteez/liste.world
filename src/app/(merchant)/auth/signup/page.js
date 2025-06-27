@@ -53,7 +53,7 @@ const Signup = () => {
             setFormError(error.message)
         }
     }, [])
-
+    // console.log(errors)
     return(
         <main>
             <form onSubmit={handleSubmit(onSubmit, () => setFormError('Review errors and try again'))}>

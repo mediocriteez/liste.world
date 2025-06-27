@@ -1,5 +1,6 @@
 "use client"
 
+import ErrorLabel from "@/components/ErrorLabel"
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 
@@ -30,7 +31,7 @@ const TwoFactorAuthentication = () => {
     return(
         <main>
             <form>
-                <ErrorLabel errors={errors?.code?.message}> 
+                <ErrorLabel> 
                     <span>code</span>
                     <input 
                         type="number"

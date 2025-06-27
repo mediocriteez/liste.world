@@ -9,8 +9,12 @@ export const schema = z.object({
                 .regex(/[a-z]/, "Must include at least one lowercase letter")
                 .regex(/[!@#$%^&*]/, "Must include at least one special character (!@#$%^&*)")
                 .regex(/^[A-Za-z0-9!@#$%^&*]+$/, "Only letters, numbers, and !@#$%^&* are allowed"),
+    confirmPassword: z.string()
 })
-.refine((data) => data.password === data.confirmPassword, {
+.refine((data) => {
+    console.log(data.password, data.confirmPassword)
+    return data.password === data.confirmPassword
+}, {
     message: 'Passwords do not match',
     path: ['confirmPassword']
 })
