@@ -9,7 +9,10 @@ export const schema = z.object({
                 .regex(/[a-z]/, "Must include at least one lowercase letter")
                 .regex(/[!@#$%^&*]/, "Must include at least one special character (!@#$%^&*)")
                 .regex(/^[A-Za-z0-9!@#$%^&*]+$/, "Only letters, numbers, and !@#$%^&* are allowed"),
-    confirmPassword: z.string()
+    confirmPassword: z.string(),
+    authorizeText: z.literal(true, {
+        errorMap: () => ({message: 'agree to recieve a one-time password by text to continue'})
+    })
 })
 .refine((data) => {
     console.log(data.password, data.confirmPassword)
