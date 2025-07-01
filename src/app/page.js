@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 
 export default function Home() {
@@ -5,8 +6,9 @@ export default function Home() {
     <main>
       <h1>Liste.World coming soon...</h1>
       <h2>Developed by <a href="https://www.flowstate.miami" target="_blank" rel="noreferrer">Flow State Software LLC - Miami, FL</a></h2>
-      <Link>log in</Link>
-      <Link>sign up</Link>
+      <Link href="/auth/login">log in</Link>
+      <Link href="/auth/signup">sign up</Link>
+      <Link href="/about/preprodterms">Terms of Service and Privacy Policy</Link>
     </main>
   );
 }
