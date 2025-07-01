@@ -61,7 +61,7 @@ const PreProductionPolicies = ({}) => {
                 6. Changes to This Policy
                 We may update this Privacy Policy. We will notify you of significant changes by posting the updated policy on our website.
 
-                If you have any questions, please contact us at jacobwintr@gmail.com.
+                If you have any questions, please contact us at help@liste.world.
             </p>
         </main>
     )
