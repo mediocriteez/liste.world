@@ -1,6 +1,7 @@
 "use client"
 
 import ErrorLabel from "@/components/ErrorLabel"
+import { supabase } from "@/services/supabase/client"
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 
@@ -30,7 +31,7 @@ const TwoFactorAuthentication = () => {
 
     return(
         <main>
-            <form>
+            <form onSubmit={e => e.preventDefault()}>
                 <ErrorLabel> 
                     <span>code</span>
                     <input 
