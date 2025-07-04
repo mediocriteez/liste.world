@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import ErrorLabel from "@/components/ErrorLabel"
+import Link from "next/link"
 // import { createNewUser as onSubmit } from "./actions"
 
 const Signup = () => {
@@ -74,6 +75,11 @@ const Signup = () => {
                     <input type="text" name="confirm-password" {...register('confirmPassword')} />
                 </ErrorLabel>
                 <p>passwords match {password === confirmPassword ? ':)' : 'X'}</p>
+                <ErrorLabel error={errors?.authorizeText?.message}>
+                    <input type="checkbox" name="authorize-text" {...register('authorizeText')} />
+                    <span>agree to receive a text message containing a one-time passcode to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
+                </ErrorLabel>
+                <Link href="/about/preprodterms" style={{color: 'blue', textDecoration: 'underline'}}>review terms of service</Link>
                 {formError &&
                     <p>{formError}</p>
                 }

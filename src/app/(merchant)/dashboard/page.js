@@ -1,6 +1,8 @@
 const MerchantDashboard = ({}) => {
     return(
-        <main>dashboard</main>
+        <main>
+            dashboard
+        </main>
     )
 }
 

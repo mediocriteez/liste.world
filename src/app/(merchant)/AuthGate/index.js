@@ -14,34 +14,22 @@ const AuthGate = ({children}) => {
 
     const router = useRouter()
     const pathName = usePathname()
-    const isAuthRoute = useMemo(() => pathName.startsWith("/auth"), [pathName])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-            router.prefetch('/login')
-            router.prefetch('/dashboard')
-    }, [])
 
     useEffect(() => {
 
         if(fetchingSession) return
 
+        const isAuthRoute = pathName.startsWith("/auth")
+
         if(session === null && !isAuthRoute) router.push(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
         
         if(session && isAuthRoute) router.replace('/dashboard')
-
-        setLoading(false)
 
     }, [session, fetchingSession])
 
     return( 
         <>
-            {loading && !isAuthRoute
-                ?
-                <PageLoader />
-                :
-                children
-            }
+            {children}
         </>
     )
 }
