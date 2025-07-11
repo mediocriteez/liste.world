@@ -1,10 +1,16 @@
 :root {
-  --black: #211316;
+  /* --black: #211316;
   --white: #FFFBF0;
   --pink: #FFD6DC;
   --red: #932E2E;
   --green: #D0FF4F;
-  --blue: #79BAF3;
+  --blue: #79BAF3; */
+
+  --white: #F7F8ED;
+  --primary-col: #136139;
+  --shade-col: #014F35;
+  --highlight-col: #F7E40F;
+
 }
 
 @media (prefers-color-scheme: dark) {
