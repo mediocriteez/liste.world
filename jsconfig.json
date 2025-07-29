@@ -3,7 +3,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./components/*"],
-      "@/services/*": ["./services/*"]
+      "@/services/*": ["./services/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/styles/*": ["./styles/*"]
     }
   }
 }

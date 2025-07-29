@@ -1,0 +1,19 @@
+.main{
+    min-height: 100dvh;
+    background-image: linear-gradient(
+                            to bottom,
+                            var(--primary-col) 0px,
+                            /* var(--primary-col) 300px, */
+                            /* var(--shade-col) 300px, */
+                            var(--shade-col) 300px
+                        );
+    color: var(--white);
+    font-family: sans-serif;
+}
+
+.form{
+    display: grid;
+    justify-items: center;
+    grid-auto-rows: min-content;
+    gap: 1rem;
+}

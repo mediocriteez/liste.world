@@ -1,0 +1,42 @@
+.primaryText{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 1.5lh;
+    border-radius: 8px;
+    padding: 9px;
+    width: 100%;
+    max-width: 250px;
+    background: var(--primary-col);
+}
+
+.primaryText [data-role="label-text"]{
+    position: absolute;
+    left: 9px;
+    top: -1.25lh;
+    font-size: .8em;
+}
+
+.primaryText input{
+    box-sizing: border-box;
+    background: var(--white);
+    border-radius: 5px;
+    padding: .5lh .25lh;
+    color: var(--black);
+    font-size: inherit;
+    font-weight: 600;
+    width: 100%;
+}
+
+.primaryText [data-role="error"]{
+    font-size: .8em;
+    margin: 9px 0 0;
+    color: var(--highlight-col)
+}
+
+.primaryText [data-role="append-input"]{
+    display: flex;
+    gap: 9px;
+    justify-content: stretch;
+    align-items: center;
+}
