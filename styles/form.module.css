@@ -6,7 +6,7 @@
     border-radius: 8px;
     padding: 9px;
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     background: var(--primary-col);
 }
 
@@ -14,7 +14,6 @@
     position: absolute;
     left: 9px;
     top: -1.25lh;
-    font-size: .8em;
 }
 
 .primaryText input{
@@ -23,13 +22,13 @@
     border-radius: 5px;
     padding: .5lh .25lh;
     color: var(--black);
-    font-size: inherit;
+    font-size: 1.25em;
     font-weight: 600;
     width: 100%;
 }
 
 .primaryText [data-role="error"]{
-    font-size: .8em;
+    font-size: .9em;
     margin: 9px 0 0;
     color: var(--highlight-col)
 }
