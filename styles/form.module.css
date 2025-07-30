@@ -20,7 +20,7 @@
     box-sizing: border-box;
     background: var(--white);
     border-radius: 5px;
-    padding: .5lh .25lh;
+    padding: .5lh .4lh;
     color: var(--black);
     font-size: 1.25em;
     font-weight: 600;
