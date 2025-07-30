@@ -1,0 +1,7 @@
+.root [data-role="lock-hoop"]{
+    transition: .2s;
+}
+
+.root[data-visible="true"] [data-role="lock-hoop"]{
+    transform: translateY(-51px);
+}

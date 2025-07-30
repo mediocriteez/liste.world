@@ -13,6 +13,7 @@ import css from "./page.module.css"
 import formCSS from '@/styles/form.module.css'
 import { classNamesToStr } from "@/utils/index"
 import PasswordVisibility from "@/components/SVG/PasswordVisibility/index-revision"
+import PasswordVisibilityLock from "@/components/SVG/PasswordVisibilityLock"
 // import { createNewUser as onSubmit } from "./actions"
 
 const formLabelClassName = formCSS.primaryText
@@ -82,7 +83,7 @@ const Signup = () => {
                             <span data-role="label-text">password</span>
                             <span data-role="append-input">
                                 <input type={passwordInputType} name="password" {...register('password')} />
-                                <button type="button" onClick={toggleVisibility}><PasswordVisibility visible={passwordVisible} style={{height: '1.5lh'}}/></button>
+                                <button type="button" onClick={toggleVisibility}><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                             </span>
                         </ErrorLabel>
                         <PasswordLiveCheck password={password}/>
@@ -92,7 +93,7 @@ const Signup = () => {
                             <span data-role="label-text">confirm password</span>
                             <span data-role="append-input">
                                 <input type={passwordInputType} name="confirm-password" {...register('confirmPassword')} />
-                                <button type="button" onClick={toggleVisibility}><PasswordVisibility visible={passwordVisible} style={{height: '1.5lh'}}/></button>
+                                <button type="button" onClick={toggleVisibility}><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                             </span>
                         </ErrorLabel>
                         <p>passwords match {password?.length > 0 && password === confirmPassword ? ':)' : 'X'}</p>
