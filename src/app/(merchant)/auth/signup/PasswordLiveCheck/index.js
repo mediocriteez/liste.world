@@ -13,8 +13,8 @@ const PasswordLiveCheck = ({password}) => {
 
     return(
         <ul className={css.root}>
-            <CheckItem fulfilled={passwordRules.isLongEnough}>at least 8 charcters long</CheckItem>
             <CheckItem fulfilled={passwordRules.hasOnlyAllowed}>letters, numbers, and !@#$%^&*</CheckItem>
+            <CheckItem fulfilled={passwordRules.isLongEnough}>at least 8 charcters long</CheckItem>
             <CheckItem fulfilled={passwordRules.hasUpper}>one uppercase character</CheckItem>
             <CheckItem fulfilled={passwordRules.hasLower}>one lowercase character</CheckItem>
             <CheckItem fulfilled={passwordRules.hasSpecial}>one special character: !@#$%^&*</CheckItem>

@@ -36,11 +36,19 @@ const Signup = () => {
         formState: {
             errors,
             isSubmitting
-        }
+        },
+        getValues
     } = useForm({
         resolver: zodResolver(schema),
         mode: 'onBlur'
     })
+
+    const {
+        ref: phoneRef,
+        onChange: rhfPhoneOnChange,
+        ...restOfPhone
+    } = register("phone");
+    // console.log(register("phone"))
 
     const [password, confirmPassword] = watch(['password', 'confirmPassword'])
 
@@ -76,7 +84,20 @@ const Signup = () => {
                         <span data-role="label-text">phone number</span>
                         <span data-role="append-input">
                             <span>+1</span>
-                            <input type="number" name="phone" {...register('phone', {setValueAs: (value) => value.trim().replace(/[^\d]/g, "")})} />
+                            <input 
+                                type="number" 
+                                name="phone" 
+                                ref={phoneRef} 
+                                onChange={(e) => {
+                                    const {value} = e.currentTarget
+                                    if(value.length > 10){
+                                        e.currentTarget.value = value.slice(0,10)
+                                        return
+                                    }
+                                    rhfPhoneOnChange(e)
+                                }}
+                                {...restOfPhone}
+                            />
                         </span>
                     </ErrorLabel>
                     <div className={formLabelClassName}>
@@ -121,6 +142,7 @@ const Signup = () => {
                         <p>{formError}</p>
                     }
                     <button type="submit">Sign Up</button>
+                    <button type="button" onClick={() => console.log(getValues())}>log</button>
                 </form>
             </div>
         </main>
