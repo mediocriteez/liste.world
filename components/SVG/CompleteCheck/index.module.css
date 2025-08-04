@@ -1,0 +1,10 @@
+.root > path{
+    fill: var(--white);
+    opacity: .3;
+    transition: .12s;
+}
+
+.root[data-complete="true"] > path{
+    opacity: 1;
+    fill: var(--highlight-col)
+}

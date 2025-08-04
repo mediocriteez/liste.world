@@ -1,7 +1,15 @@
 .root{
+    box-sizing: border-box;
     display: grid;
     grid-auto-rows: min-content;
-    gap: 5px;
-    margin-top: 9px;
+    gap: 10px;
+    margin-top: 18px;
     font-size: .89em;
+    padding: 0 8px 0 5px;
+}
+
+.root li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

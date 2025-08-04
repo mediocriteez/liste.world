@@ -14,6 +14,7 @@ import formCSS from '@/styles/form.module.css'
 import { classNamesToStr } from "@/utils/index"
 import PasswordVisibility from "@/components/SVG/PasswordVisibility/index-revision"
 import PasswordVisibilityLock from "@/components/SVG/PasswordVisibilityLock"
+import CompleteCheck from "@/components/SVG/CompleteCheck"
 // import { createNewUser as onSubmit } from "./actions"
 
 const formLabelClassName = formCSS.primaryText
@@ -75,7 +76,7 @@ const Signup = () => {
                         <span data-role="label-text">phone number</span>
                         <span data-role="append-input">
                             <span>+1</span>
-                            <input type="text" name="phone" {...register('phone')} />
+                            <input type="number" name="phone" {...register('phone', {setValueAs: (value) => value.trim().replace(/[^\d]/g, "")})} />
                         </span>
                     </ErrorLabel>
                     <div className={formLabelClassName}>
@@ -96,7 +97,20 @@ const Signup = () => {
                                 <button type="button" onClick={toggleVisibility}><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                             </span>
                         </ErrorLabel>
-                        <p>passwords match {password?.length > 0 && password === confirmPassword ? ':)' : 'X'}</p>
+                        <p 
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                fontSize: '.89em', 
+                                marginTop: '18px',
+                                padding: '0 8px 0 5px'
+                            }}
+                        >
+                            <span>
+                                passwords match
+                            </span>
+                            <CompleteCheck style={{height: '.85lh'}} complete={password?.length > 0 && password === confirmPassword}/>
+                        </p>
                     </div>
                     <ErrorLabel error={errors?.authorizeText?.message}>
                         <input type="checkbox" name="authorize-text" {...register('authorizeText')} />
