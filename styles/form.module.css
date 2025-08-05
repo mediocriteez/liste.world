@@ -2,40 +2,44 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    margin-top: 1.5lh;
+    margin-top: 1.4lh;
     border-radius: 8px;
-    padding: 9px;
+    padding: 10px;
     width: 100%;
     max-width: 350px;
     background: var(--primary-col);
+    font-family: var(--font-sora);
+    font-weight: 600;
 }
 
 .primaryText [data-role="label-text"]{
     position: absolute;
     left: 9px;
-    top: -1.25lh;
+    top: -1.4lh;
 }
 
 .primaryText input{
     box-sizing: border-box;
     background: var(--white);
     border-radius: 5px;
-    padding: .5lh .4lh;
-    color: var(--black);
+    padding: .4lh .4lh;
+    color: var(--black-gray);
+    font-family: var(--font-poppins);
     font-size: 1.25em;
     font-weight: 600;
     width: 100%;
 }
 
 .primaryText [data-role="error"]{
-    font-size: .9em;
-    margin: 9px 0 0;
-    color: var(--highlight-col)
+    margin: 10px 0 0;
+    font-size: .8em;
+    /* font-weight: 500; */
+    color: var(--highlight-col);
 }
 
 .primaryText [data-role="append-input"]{
     display: flex;
-    gap: 9px;
+    gap: 10px;
     justify-content: stretch;
     align-items: center;
 }

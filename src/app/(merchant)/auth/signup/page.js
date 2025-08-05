@@ -15,6 +15,7 @@ import { classNamesToStr } from "@/utils/index"
 import PasswordVisibility from "@/components/SVG/PasswordVisibility/index-revision"
 import PasswordVisibilityLock from "@/components/SVG/PasswordVisibilityLock"
 import CompleteCheck from "@/components/SVG/CompleteCheck"
+import Checkbox from "@/components/Checkbox"
 // import { createNewUser as onSubmit } from "./actions"
 
 const formLabelClassName = formCSS.primaryText
@@ -123,8 +124,9 @@ const Signup = () => {
                                 display: 'flex',
                                 justifyContent: 'space-between',
                                 fontSize: '.89em', 
-                                marginTop: '18px',
-                                padding: '0 8px 0 5px'
+                                marginTop: '20px',
+                                padding: '0 8px 0 5px',
+                                fontWeight: '500'
                             }}
                         >
                             <span>
@@ -133,16 +135,31 @@ const Signup = () => {
                             <CompleteCheck style={{height: '.85lh'}} complete={password?.length > 0 && password === confirmPassword}/>
                         </p>
                     </div>
-                    <ErrorLabel error={errors?.authorizeText?.message}>
-                        <input type="checkbox" name="authorize-text" {...register('authorizeText')} />
-                        <span>agree to receive a text message containing a one-time passcode to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
+                    <ErrorLabel
+                        style={{
+                            padding: '5px',
+                            fontSize: '.75em',
+                            fontFamily: 'var(--font-sora)',
+                            maxWidth: '350px',
+                        }}
+                    >
+                        <span
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                            }}
+                        >
+                            <Checkbox name="authorize-text" {...register('authorizeText')} />
+                            <span>agree to receive a text message containing a one-time passcode to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
+                        </span>
                     </ErrorLabel>
-                    <Link href="/about/preprodterms" style={{color: 'blue', textDecoration: 'underline'}}>review terms of service</Link>
+                    <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
                     {formError &&
                         <p>{formError}</p>
                     }
                     <button type="submit">Sign Up</button>
-                    <button type="button" onClick={() => console.log(getValues())}>log</button>
+                    {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
                 </form>
             </div>
         </main>

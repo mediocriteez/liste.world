@@ -3,9 +3,10 @@
     display: grid;
     grid-auto-rows: min-content;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: 20px;
     font-size: .89em;
     padding: 0 8px 0 5px;
+    font-weight: 500;
 }
 
 .root li{
