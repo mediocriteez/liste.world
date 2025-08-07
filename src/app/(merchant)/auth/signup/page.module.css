@@ -27,13 +27,13 @@
     width: 100%;
     max-width: 350px;
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--black-gray);
-    background: linear-gradient(30deg, var(--white), var(--highlight-col));
+    background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
     transition: .2s;
 }
 
 .submit:hover{
-    box-shadow: 0px 0px 7px var(--highlight-col);
+    box-shadow: 0px 0px 10px var(--highlight-col);
     color: var(--black);
 }
