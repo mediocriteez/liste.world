@@ -158,7 +158,7 @@ const Signup = () => {
                     {formError &&
                         <p>{formError}</p>
                     }
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" className={css.submit}>Start Listeing!</button>
                     {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
                 </form>
             </div>
