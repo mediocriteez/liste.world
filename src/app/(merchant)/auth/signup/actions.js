@@ -3,15 +3,10 @@
 import { schema } from "./zod"
 
 export const createNewUser = async (data) => {
-    const {
-        email,
-        password,
-        confirmPassword
-    } = data
 
     try {
         const validation = schema.safeParse(data)
-
+        console.log(validation)
         if(!validation.success) throw {message: 'invalid data'}
 
         

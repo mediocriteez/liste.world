@@ -55,7 +55,6 @@ const Signup = () => {
 
     const onSubmit = useCallback(async (formData, something ) => {
         try {
-
             const {data, error} = await supabase.auth.signUp({
                 phone: '1' + formData.phone,
                 password: formData.password,
@@ -71,16 +70,29 @@ const Signup = () => {
             router.push(`/auth/2fa?id=${phone}&signup`)
 
         } catch (error) {
-            console.error(error)
+            // console.log('error triggered')
+            // console.error(error.message)
             setFormError(error.message)
         }
+    }, [])
+
+    const onSubmitErrors = useCallback(errors => {
+
+        const flattened = []
+
+        for(const field in errors){
+            const {message} = errors[field]
+            flattened.push(message)
+        }
+
+        setFormError(flattened)
     }, [])
     // console.log(errors)
     return(
         <main className={css.main}>
             <div className={classNamesToStr(['channelWidth', 'centered'])}>
                 <div style={{height: '300px'}}></div>
-                <form onSubmit={handleSubmit(onSubmit, () => setFormError('Review errors and try again'))} autoComplete="off" className={css.form}>
+                <form onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
                     <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
                         <span data-role="label-text">phone number</span>
                         <span data-role="append-input">
@@ -156,7 +168,18 @@ const Signup = () => {
                     </ErrorLabel>
                     <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
                     {formError &&
-                        <p>{formError}</p>
+                        <p className={css.formError}>
+                            <span data-role="title">Error:</span>
+                            {
+                                Array.isArray(formError) ?
+
+                                formError.map((error, i) => <span key={i}> {'>'} {error}</span>)
+
+                                :
+
+                                <span>{formError}</span>
+                            }
+                        </p>
                     }
                     <button type="submit" className={css.submit}>Start Listeing!</button>
                     {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}

@@ -20,6 +20,34 @@
     gap: 1.6rem;
 }
 
+.formError{
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: .5rem;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 350px;
+    background: var(--white);
+}
+
+.formError > span[data-role="title"]{
+    /* padding: .25em .5em; */
+    border-radius: 8px;
+    background-color: var(--white);
+    font-weight: 600;
+    color: var(--black);
+    justify-self: start;
+}
+
+.formError > span{
+    /* padding: 0 .75em; */
+    border-radius: 8px;
+    /* background-color: var(--shade-col); */
+    color: var(--black);
+    font-size: .85em;
+}
+
 .submit{
     box-sizing: border-box;
     padding: 1em 1em;
