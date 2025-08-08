@@ -91,8 +91,14 @@ const Signup = () => {
     return(
         <main className={css.main}>
             <div className={classNamesToStr(['channelWidth', 'centered'])}>
-                <div style={{height: '300px'}}></div>
-                <form onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
+                <div>
+                    <h2 className={css.introText}>
+                        Get Started With<br/>
+                        <span>Liste</span>
+                    </h2>
+                    <h1 className={css.h1}><Link href="#form">Sign Up</Link></h1>
+                </div>
+                <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
                     <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
                         <span data-role="label-text">phone number</span>
                         <span data-role="append-input">
@@ -182,6 +188,8 @@ const Signup = () => {
                         </p>
                     }
                     <button type="submit" className={css.submit}>Start Listeing!</button>
+
+                    <Link href="/auth/login" style={{fontSize: '.7em', fontWeight: '300'}}>already a user? Log in</Link>
                     {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
                 </form>
             </div>

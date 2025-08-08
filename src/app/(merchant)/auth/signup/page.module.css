@@ -13,6 +13,45 @@
     /* font-family: sans-serif; */
 }
 
+.introText{
+    /* text-align: center; */
+    margin: 2rem auto -2.5rem;
+    max-width: 350px;
+    /* display: grid; */
+    font-family: var(--font-poppins);
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--highlight-col);
+}
+
+.introText>span{
+    display: inline-block;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 8rem;
+    font-weight: 700;
+    font-family: var(--font-old-standard-tt);
+    text-align: center;
+    color: var(--white)
+}
+
+.h1{
+    display: flex;
+    justify-content: center;
+}
+
+.h1>a{
+    margin: 1rem 0 3rem;
+    padding: .5em;
+    border-radius: 8px;
+    /* background: linear-gradient(to bottom, var(--white) 20%, transparent); */
+    background: var(--white);
+    text-decoration: none;
+    color: var(--highlight-shade-col);
+    color: var(--primary-col);
+    font-size: 1.5rem;
+}
+
 .form{
     display: grid;
     justify-items: center;
