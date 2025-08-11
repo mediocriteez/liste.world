@@ -1,7 +1,57 @@
+:root{
+    --animation-duration: 1.75s;
+}
+
 .flower{
-
-    
-
     fill: var(--highlight-col);
 }
 
+.fade1, .fade2{
+    opacity: 0;
+    animation-name: fadeInOut;
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+.fade1{
+    animation-delay: 0;
+}
+
+.fade2{
+    animation-delay: calc(var(--animation-duration) * .7);
+}
+
+.fade3{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: calc(var(--animation-duration) * .5);
+    animation-delay: calc(var(--animation-duration) * 1.4);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOut {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}

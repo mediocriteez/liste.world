@@ -34,6 +34,7 @@ body {
   min-height: 100dvh;
   margin: 0;
   font-family: var(--font-sora);
+  scroll-behavior: smooth;
 }
 
 body {

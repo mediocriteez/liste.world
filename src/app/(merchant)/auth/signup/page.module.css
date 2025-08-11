@@ -13,20 +13,26 @@
     /* font-family: sans-serif; */
 }
 
-.introText{
-    /* text-align: center; */
-    margin: 2rem auto -2.5rem;
-    max-width: 350px;
-    /* display: grid; */
-    font-family: var(--font-poppins);
-    font-size: 2em;
-    font-weight: 500;
-    color: var(--highlight-col);
+.header{
+    display: grid;
+    /* flex-direction: column; */
+    justify-content: unset;
+    align-items: start;
 }
 
-.introText>span{
-    display: inline-block;
-    margin-top: 1rem;
+.introText{
+    /* text-align: center; */
+    margin: 2rem auto -1rem;
+    /* max-width: 350px; */
+    /* display: grid; */
+    /* font-family: var(--font-poppins); */
+    /* font-size: 2em; */
+    /* font-weight: 400; */
+    /* color: var(--highlight-col); */
+    order: 2;
+
+    /* display: inline-block; */
+    /* margin-top: 0rem; */
     width: 100%;
     font-size: 8rem;
     font-weight: 700;
@@ -38,18 +44,36 @@
 .h1{
     display: flex;
     justify-content: center;
+    order: 3;
+}
+
+.introParagraph{
+    margin: 2rem auto 0;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    /* max-width: 350px; */
+    background: var(--shade-col);
+    order: 1;
 }
 
 .h1>a{
-    margin: 1rem 0 3rem;
+    margin: 0 0 3rem;
     padding: .5em;
     border-radius: 8px;
     /* background: linear-gradient(to bottom, var(--white) 20%, transparent); */
-    background: var(--white);
+    /* background: var(--white); */
+    background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
     text-decoration: none;
-    color: var(--highlight-shade-col);
-    color: var(--primary-col);
+    /* color: var(--highlight-shade-col); */
+    /* color: var(--primary-col); */
+    color: var(--black-gray);
     font-size: 1.5rem;
+}
+
+.h1>a:hover{
+    box-shadow: 0px 0px 7.5px var(--highlight-col);
+    color: var(--black);
 }
 
 .form{

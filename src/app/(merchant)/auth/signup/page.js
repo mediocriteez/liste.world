@@ -16,6 +16,7 @@ import PasswordVisibility from "@/components/SVG/PasswordVisibility/index-revisi
 import PasswordVisibilityLock from "@/components/SVG/PasswordVisibilityLock"
 import CompleteCheck from "@/components/SVG/CompleteCheck"
 import Checkbox from "@/components/Checkbox"
+import BuddingFlower from "@/components/SVG/BuddingFlowerSVG"
 // import { createNewUser as onSubmit } from "./actions"
 
 const formLabelClassName = formCSS.primaryText
@@ -91,18 +92,26 @@ const Signup = () => {
     return(
         <main className={css.main}>
             <div className={classNamesToStr(['channelWidth', 'centered'])}>
-                <div>
-                    <h2 className={css.introText}>
-                        Get Started With<br/>
-                        <span>Liste</span>
-                    </h2>
+                <div className={css.header}>
                     <h1 className={css.h1}><Link href="#form">Sign Up</Link></h1>
+                    <h2 className={css.introText}>
+                        Liste<BuddingFlower style={{width: '.4lh', transform: 'translateY(.1lh)'}}/>
+                    </h2>
+                    <p className={css.introParagraph}>
+                        <span data-role="price">$0</span><br/>
+                        to set up your store up<br/>
+                        <span data-role="price">$2</span><br/>
+                        per month for 2 months to go live.<br/>
+                        <span data-role="price">$15</span><br/>
+                        per month for life<br />
+                        Cancel anytime, no obligations
+                    </p>
                 </div>
                 <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
                     <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
                         <span data-role="label-text">phone number</span>
                         <span data-role="append-input">
-                            <span>+1</span>
+                            <span style={{padding: '0 .1em'}}>+1</span>
                             <input 
                                 type="number" 
                                 name="phone" 
