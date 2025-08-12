@@ -7,7 +7,7 @@
                             var(--primary-col) 0px,
                             /* var(--primary-col) 300px, */
                             /* var(--shade-col) 300px, */
-                            var(--shade-col) 300px
+                            var(--shade-col) 500px
                         );
     color: var(--white);
     /* font-family: sans-serif; */
@@ -55,6 +55,13 @@
     /* max-width: 350px; */
     background: var(--shade-col);
     order: 1;
+}
+
+.introParagraph>[data-role="price"]{
+    font-size: 5em;
+    font-weight: 500;
+    color: var(--highlight-col);
+    text-shadow: .04em .04em 0 var(--black-gray);
 }
 
 .h1>a{

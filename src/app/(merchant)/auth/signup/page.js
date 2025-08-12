@@ -93,9 +93,9 @@ const Signup = () => {
         <main className={css.main}>
             <div className={classNamesToStr(['channelWidth', 'centered'])}>
                 <div className={css.header}>
-                    <h1 className={css.h1}><Link href="#form">Sign Up</Link></h1>
+                    <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
                     <h2 className={css.introText}>
-                        Liste<BuddingFlower style={{width: '.4lh', transform: 'translateY(.1lh)'}}/>
+                        Liste<BuddingFlower style={{width: '.4lh', transform: 'translateY(.075lh)'}}/>
                     </h2>
                     <p className={css.introParagraph}>
                         <span data-role="price">$0</span><br/>
