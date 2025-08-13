@@ -107,18 +107,25 @@ const Signup = () => {
                         per month for life<br />
                         Cancel anytime, no obligations
                     </p> */}
-                    <p className={css.introParagraph2}>
+                    <article className={css.introParagraph2}>
                         <span className={css.priceTagPositioner}>
                             <span className={css.priceTagContainer}>
                                 <PriceTag className={css.priceTag}/>
                                 $$$
                             </span>
                         </span>
-                        <span>
-                            It&apos;s <span data-bolded>free</span> to get started!<br />
-
+                        <span style={{fontSize: '1.75em', fontWeight: '600', fontFamily: 'var(--font-poppins)', display: 'block', textAlign: 'center', marginBottom: '.25em'}}>
+                            It&apos;s <span data-bolded>FREE</span> to get started!<br />
                         </span>
-                    </p>
+                        <div className={css.pricingSchedule}>
+                            <hr/>
+                            <span data-bolded>$2</span> 
+                            <span>per month for 3 months once you go live</span>
+                            <hr />
+                            <span data-bolded>$15</span> 
+                            <span>per month for life</span>
+                        </div>
+                    </article>
                 </div>
                 <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
                     <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
