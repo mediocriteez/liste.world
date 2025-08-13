@@ -148,9 +148,11 @@
     /* background: linear-gradient(to bottom, var(--white) 20%, transparent); */
     /* background: var(--white); */
     background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
+    /* background: var(--highlight-shade-col); */
     text-decoration: none;
     /* color: var(--highlight-shade-col); */
     /* color: var(--primary-col); */
+    transition: .25s;
     color: var(--black-gray);
     font-size: 1.5rem;
 }
