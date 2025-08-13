@@ -115,7 +115,7 @@ const Signup = () => {
                             </span>
                         </span>
                         <span>
-                            It's <span data-bolded>free</span> to get started!<br />
+                            It&apos;s <span data-bolded>free</span> to get started!<br />
 
                         </span>
                     </p>
