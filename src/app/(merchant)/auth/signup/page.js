@@ -17,6 +17,7 @@ import PasswordVisibilityLock from "@/components/SVG/PasswordVisibilityLock"
 import CompleteCheck from "@/components/SVG/CompleteCheck"
 import Checkbox from "@/components/Checkbox"
 import BuddingFlower from "@/components/SVG/BuddingFlowerSVG"
+import PriceTag from "@/components/SVG/PriceTag"
 // import { createNewUser as onSubmit } from "./actions"
 
 const formLabelClassName = formCSS.primaryText
@@ -97,14 +98,26 @@ const Signup = () => {
                     <h2 className={css.introText}>
                         Liste<BuddingFlower style={{width: '.4lh', transform: 'translateY(.075lh)'}}/>
                     </h2>
-                    <p className={css.introParagraph}>
-                        <span data-role="price">$0</span><br/>
-                        to set up your store up<br/>
+                    {/* <p className={css.introParagraph}>
+                        <span data-role="price">FREE</span><br/>
+                        to get started<br/>
                         <span data-role="price">$2</span><br/>
                         per month for 2 months to go live.<br/>
                         <span data-role="price">$15</span><br/>
                         per month for life<br />
                         Cancel anytime, no obligations
+                    </p> */}
+                    <p className={css.introParagraph2}>
+                        <span className={css.priceTagPositioner}>
+                            <span className={css.priceTagContainer}>
+                                <PriceTag className={css.priceTag}/>
+                                $$$
+                            </span>
+                        </span>
+                        <span>
+                            It's <span data-bolded>free</span> to get started!<br />
+
+                        </span>
                     </p>
                 </div>
                 <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
@@ -133,7 +146,7 @@ const Signup = () => {
                             <span data-role="label-text">password</span>
                             <span data-role="append-input">
                                 <input type={passwordInputType} name="password" {...register('password')} />
-                                <button type="button" onClick={toggleVisibility}><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
+                                <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                             </span>
                         </ErrorLabel>
                         <PasswordLiveCheck password={password}/>
@@ -143,7 +156,7 @@ const Signup = () => {
                             <span data-role="label-text">confirm password</span>
                             <span data-role="append-input">
                                 <input type={passwordInputType} name="confirm-password" {...register('confirmPassword')} />
-                                <button type="button" onClick={toggleVisibility}><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
+                                <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                             </span>
                         </ErrorLabel>
                         <p 
@@ -182,7 +195,7 @@ const Signup = () => {
                         </span>
                     </ErrorLabel>
                     <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
-                    {formError &&
+                    {!isSubmitting && formError &&
                         <p className={css.formError}>
                             <span data-role="title">Error:</span>
                             {
