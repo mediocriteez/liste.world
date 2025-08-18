@@ -124,7 +124,11 @@ const Signup = () => {
                             <hr />
                             <span data-bolded>$15</span> 
                             <span>per month for life</span>
+                            <hr />
+                            <span data-bolded>X</span>
+                            <span>cancel anytime, no obligations</span>
                         </div>
+                        {/* <span style={{display: 'block', marginTop: '.5em', textAlign: 'left', fontWeight: 500, color: 'var(--black-gray)'}}>cancel anytime, no obligations</span> */}
                     </article>
                 </div>
                 <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
