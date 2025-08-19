@@ -1,4 +1,4 @@
-import { Crimson_Text, DM_Serif_Text, Domine, Geist, Geist_Mono, Old_Standard_TT, Outfit, Poppins, Sora } from "next/font/google";
+import { Crimson_Text, DM_Serif_Text, Domine, Geist, Geist_Mono, Kanit, Neuton, Old_Standard_TT, Outfit, Poppins, Sora, Ultra } from "next/font/google";
 import "./globals.css";
 // import 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css';
 import AuthContext from "./AuthContext";
@@ -55,8 +55,27 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"]
 })
 
+const neuton = Neuton({
+  variable: "--font-neuton",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ['normal', 'italic']
+})
+
+const ultra = Ultra({
+  variable: "--font-ultra",
+  subsets: ["latin"],
+  weight: ["400"],
+})
+
+const kanit = Kanit({
+  variable: "--font-kanit",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+})
+
 export const metadata = {
-  title: "Liste - Simply Selling",
+  title: "Liste - Selling Simply",
   description: `Start your e-commerce journey here because you and your customers will love your Liste site.
   Build your product catalog, create the pages you want, and forget about the rest. Liste wants you to focus on selling your products.
   Create one page, one-hundred pages, or no pages. Your Liste site will always look and feel great`,
@@ -80,6 +99,9 @@ export default function RootLayout({ children }) {
           ${oldStandardTT.variable} 
           ${dmSerifText.variable} 
           ${poppins.variable}
+          ${neuton.variable}
+          ${ultra.variable} 
+          ${kanit.variable}
         `}
       >
         <AuthContext>

@@ -4,13 +4,19 @@
     min-height: 100dvh;
     background-image: linear-gradient(
                             to bottom,
-                            var(--primary-col) 0px,
+                            var(--shade-col) 0px,
                             /* var(--primary-col) 300px, */
                             /* var(--shade-col) 300px, */
-                            var(--shade-col) 500px
+                            var(--shadier-col) 500px
                         );
     color: var(--white);
     /* font-family: sans-serif; */
+}
+
+.main>div>*,
+.header > * {
+    position: relative;
+    z-index: 2;
 }
 
 .header{
@@ -21,8 +27,9 @@
 }
 
 .introText{
+    
     /* text-align: center; */
-    margin: 5rem auto -1rem;
+    margin: 7rem auto -2rem;
     /* max-width: 350px; */
     /* display: grid; */
     /* font-family: var(--font-poppins); */
@@ -34,11 +41,25 @@
     /* display: inline-block; */
     /* margin-top: 0rem; */
     width: 100%;
-    font-size: 8rem;
-    font-weight: 700;
-    font-family: var(--font-old-standard-tt);
+    font-size: 9rem;
+    font-weight: 600;
+    font-family: var(--font-kanit);
+    /* font-style: italic; */
     text-align: center;
-    color: var(--white)
+    color: var(--white);
+    overflow: visible;
+    /* isolation: isolate; */
+    /* text-shadow: -4px 4px 0px var(--primary-col); */
+}
+
+.introText>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3.25em;
+    transform: translate(calc(-50% - 7px), calc(-50% + 18px));
+    z-index: -1;
+    /* opacity: 0; */
 }
 
 
@@ -84,7 +105,7 @@
     display: inline-block;
     font-size: 3.25em;
     font-weight: 700;
-    color: var(--highlight-col);
+    color: var(--highlight-shade-col);
     isolation: isolate;
     transform: rotate(-15deg);
     font-family: var(--font-sora);
@@ -137,18 +158,18 @@
 .h1{
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     order: 3;
 }
 
 .h1>a{
-    margin: 0 0 3rem;
+    margin: 0 0 4rem;
     padding: .5em;
     border-radius: 8px;
     /* background: linear-gradient(to bottom, var(--white) 20%, transparent); */
     /* background: var(--white); */
     background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
-    /* background: var(--highlight-shade-col); */
+    /* background: var(--primary-col); */
     text-decoration: none;
     /* color: var(--highlight-shade-col); */
     /* color: var(--primary-col); */
@@ -158,8 +179,8 @@
 }
 
 .h1>a:hover{
-    box-shadow: 0px 0px 7.5px var(--highlight-col);
-    color: var(--black);
+    /* box-shadow: 0px 0px 7.5px var(--highlight-col);
+    color: var(--black);*/
 }
 
 .form{

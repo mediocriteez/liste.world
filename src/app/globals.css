@@ -6,13 +6,23 @@
   --green: #D0FF4F;
   --blue: #79BAF3; */
 
-  --white: #F7F8ED;
-  --black: #092E1E;
+  /* --white: #F7F8ED; */
+  /* --black: #092E1E; */
+  /* --primary-col: #136139; */
+  /* --shade-col: #014F35; */
+  /* --highlight-col: #F7E40F;
+  --highlight-shade-col: #edc315; */
+  --white: #F0FFF7;
+  --black: #0C0718;
+  --gray: #386055;
   --black-gray: #25352d;
-  --primary-col: #136139;
-  --shade-col: #014F35;
-  --highlight-col: #F7E40F;
-  --highlight-shade-col: #edc315;
+
+  --primary-col: #27317B;
+  --shade-col: #1F1C5A;
+  --shadier-col: #120C1D;
+  
+  --highlight-col: #56E39A;
+  --highlight-shade-col: #34B572;
 
 
   --max-width: 1500px;

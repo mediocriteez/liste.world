@@ -96,7 +96,9 @@ const Signup = () => {
                 <div className={css.header}>
                     <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
                     <h2 className={css.introText}>
-                        Liste<BuddingFlower style={{width: '.4lh', transform: 'translateY(.075lh)'}}/>
+                        {/* <img aria-hidden src="/liste_inner_star.svg" /> */}
+                        Liste
+                        {/* <BuddingFlower style={{width: '.4lh', transform: 'translateY(.075lh)'}}/> */}
                     </h2>
                     {/* <p className={css.introParagraph}>
                         <span data-role="price">FREE</span><br/>
@@ -120,7 +122,7 @@ const Signup = () => {
                         <div className={css.pricingSchedule}>
                             <hr/>
                             <span data-bolded>$2</span> 
-                            <span>per month for 3 months once you go live</span>
+                            <span>per month for 6 months once you go live</span>
                             <hr />
                             <span data-bolded>$15</span> 
                             <span>per month for life</span>
