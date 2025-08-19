@@ -14,12 +14,14 @@
   --highlight-shade-col: #edc315; */
   --white: #F0FFF7;
   --black: #0C0718;
+  --light-gray: #6C988C;
   --gray: #386055;
   --black-gray: #25352d;
 
   --primary-col: #27317B;
   --shade-col: #1F1C5A;
-  --shadier-col: #120C1D;
+  --mid-shade-col: #14163D;
+  --dark-shade-col: #120C1D;
   
   --highlight-col: #56E39A;
   --highlight-shade-col: #34B572;

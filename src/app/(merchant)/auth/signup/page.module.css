@@ -7,7 +7,7 @@
                             var(--shade-col) 0px,
                             /* var(--primary-col) 300px, */
                             /* var(--shade-col) 300px, */
-                            var(--shadier-col) 500px
+                            var(--dark-shade-col) 500px
                         );
     color: var(--white);
     /* font-family: sans-serif; */
@@ -29,7 +29,7 @@
 .introText{
     
     /* text-align: center; */
-    margin: 7rem auto -2rem;
+    margin: 5rem auto -2rem;
     /* max-width: 350px; */
     /* display: grid; */
     /* font-family: var(--font-poppins); */
@@ -174,7 +174,7 @@
     /* color: var(--highlight-shade-col); */
     /* color: var(--primary-col); */
     transition: .25s;
-    color: var(--black-gray);
+    color: var(--mid-shade-col);
     font-size: 1.5rem;
 }
 
@@ -227,7 +227,7 @@
     max-width: 350px;
     font-size: 1.5em;
     font-weight: 700;
-    color: var(--black-gray);
+    color: var(--mid-shade-col);
     background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
     transition: .2s;
 }
