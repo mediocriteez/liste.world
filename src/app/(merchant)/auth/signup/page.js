@@ -96,9 +96,8 @@ const Signup = () => {
                 <div className={css.header}>
                     <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
                     <h2 className={css.introText}>
-                        {/* <img aria-hidden src="/liste_inner_star.svg" /> */}
                         Liste
-                        {/* <BuddingFlower style={{width: '.4lh', transform: 'translateY(.075lh)'}}/> */}
+                        <img alt="liste logo" src="/images/logo_clean.svg" />
                     </h2>
                     {/* <p className={css.introParagraph}>
                         <span data-role="price">FREE</span><br/>

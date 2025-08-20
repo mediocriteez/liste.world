@@ -27,7 +27,7 @@
 }
 
 .introText{
-    
+    position: relative;
     /* text-align: center; */
     margin: 5rem auto -2rem;
     /* max-width: 350px; */
@@ -48,18 +48,25 @@
     text-align: center;
     color: var(--white);
     overflow: visible;
-    /* isolation: isolate; */
+    isolation: isolate;
     /* text-shadow: -4px 4px 0px var(--primary-col); */
 }
 
 .introText>img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3.25em;
-    transform: translate(calc(-50% - 7px), calc(-50% + 18px));
+    padding-left: 2px;
+    height: .42lh;
+    vertical-align: middle;
     z-index: -1;
-    /* opacity: 0; */
+}
+
+@media (max-width: 460px){
+    .introText>img{
+        position: absolute;
+        top: calc(50% + 15px);
+        right: 5px;
+        height: .6lh;
+        transform: translateY(-50%);
+    }
 }
 
 
