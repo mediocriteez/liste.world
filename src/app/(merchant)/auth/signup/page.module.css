@@ -142,7 +142,7 @@
     grid-auto-rows: min-content;
     align-items: center;
     column-gap: 10px;
-    row-gap: .25em;
+    row-gap: .5em;
 }
 
 .pricingSchedule > span[data-bolded]{
