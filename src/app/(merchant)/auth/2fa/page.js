@@ -33,6 +33,12 @@ const TwoFactorAuthentication = () => {
         verifyOtp(code)
     }, [code])
 
+    const caretToEnd = useCallback(e => {
+        const {currentTarget:c} = e 
+        const end = c.value.length;
+        c.setSelectionRange(end, end);
+    })
+
     return(
         <div className={classNamesToStr(['channelWidth', 'centered'])}>
             <h1 className={css.h1}>2FA</h1>
@@ -47,6 +53,7 @@ const TwoFactorAuthentication = () => {
                             name="2fa-code" 
                             value={code} 
                             onChange={e => /^\d{0,6}$/.test(e.target.value) && setCode(e.target.value)}
+                            onClick={caretToEnd}
                             autoFocus
                         />
                     {[1,2,3,4,5,6].map(n => (

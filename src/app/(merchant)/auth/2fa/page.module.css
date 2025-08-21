@@ -22,7 +22,12 @@
     color: transparent;
     background: transparent;
     /* pointer-events: none; */
+    user-select: none;
+}
 
+.inputContainer > input::selection{
+    background: transparent;
+    color: transparent;
 }
 
 .inputContainer > input:focus ~ .psuedoInput{
@@ -30,11 +35,14 @@
 }
 
 .psuedoInput{
+    display: grid;
+    place-items: center;
     border-radius: 8px;
-    width: 1lh;
+    width: calc(1lh + .5em);
     aspect-ratio: 1;
     background: var(--dark-shade-col);
-    font-size: 2.5em;
+    font-size: 2em;
+    font-weight: 500;
     opacity: .85;
     pointer-events: none;
     text-align: center;
