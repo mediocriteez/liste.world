@@ -1,0 +1,15 @@
+.main{
+    box-sizing: border-box;
+    padding: 0 1.5rem 4rem;
+    width: 100dvw;
+    min-height: 100dvh;
+    background-image: linear-gradient(
+                            to bottom,
+                            var(--shade-col) 0px,
+                            /* var(--primary-col) 300px, */
+                            /* var(--shade-col) 300px, */
+                            var(--dark-shade-col) 600px
+                        );
+    color: var(--white);
+    /* font-family: sans-serif; */
+}

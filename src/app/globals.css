@@ -30,6 +30,14 @@
   --max-width: 1500px;
   --mid-width: 1200px;
   --channel-width: 500px;
+
+  --dark-gradient: linear-gradient(
+                        to bottom,
+                        var(--shade-col) 0px,
+                        /* var(--primary-col) 300px, */
+                        /* var(--shade-col) 300px, */
+                        var(--dark-shade-col) 600px
+                    );
 }
 
 /* @media (prefers-color-scheme: dark) {

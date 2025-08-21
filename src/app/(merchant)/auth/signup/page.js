@@ -91,143 +91,141 @@ const Signup = () => {
     }, [])
     // console.log(errors)
     return(
-        <main className={css.main}>
-            <div className={classNamesToStr(['channelWidth', 'centered'])}>
-                <div className={css.header}>
-                    <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
-                    <h2 className={css.introText}>
-                        Liste
-                        <img alt="liste logo" src="/images/logo_clean.svg" />
-                    </h2>
-                    {/* <p className={css.introParagraph}>
-                        <span data-role="price">FREE</span><br/>
-                        to get started<br/>
-                        <span data-role="price">$2</span><br/>
-                        per month for 2 months to go live.<br/>
-                        <span data-role="price">$15</span><br/>
-                        per month for life<br />
-                        Cancel anytime, no obligations
-                    </p> */}
-                    <article className={css.introParagraph2}>
-                        <span className={css.priceTagPositioner}>
-                            <span className={css.priceTagContainer}>
-                                <PriceTag className={css.priceTag}/>
-                                $$$
-                            </span>
+        <div className={classNamesToStr(['channelWidth', 'centered'])}>
+            <div className={css.header}>
+                <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
+                <h2 className={css.introText}>
+                    Liste
+                    <img alt="liste logo" src="/images/logo_clean.svg" />
+                </h2>
+                {/* <p className={css.introParagraph}>
+                    <span data-role="price">FREE</span><br/>
+                    to get started<br/>
+                    <span data-role="price">$2</span><br/>
+                    per month for 2 months to go live.<br/>
+                    <span data-role="price">$15</span><br/>
+                    per month for life<br />
+                    Cancel anytime, no obligations
+                </p> */}
+                <article className={css.introParagraph2}>
+                    <span className={css.priceTagPositioner}>
+                        <span className={css.priceTagContainer}>
+                            <PriceTag className={css.priceTag}/>
+                            $$$
                         </span>
-                        <span style={{fontSize: '1.75em', fontWeight: '600', fontFamily: 'var(--font-poppins)', display: 'block', textAlign: 'center', marginBottom: '.25em'}}>
-                            It&apos;s <span data-bolded>FREE</span> to get started!<br />
-                        </span>
-                        <div className={css.pricingSchedule}>
-                            <hr/>
-                            <span data-bolded>$2</span> 
-                            <span>per month for 6 months once you go live</span>
-                            <hr />
-                            <span data-bolded>$15</span> 
-                            <span>per month for life</span>
-                            <hr />
-                            <span data-bolded>X</span>
-                            <span>cancel anytime, no obligations</span>
-                        </div>
-                        {/* <span style={{display: 'block', marginTop: '.5em', textAlign: 'left', fontWeight: 500, color: 'var(--black-gray)'}}>cancel anytime, no obligations</span> */}
-                    </article>
-                </div>
-                <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
-                    <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
-                        <span data-role="label-text">phone number</span>
+                    </span>
+                    <span style={{fontSize: '1.75em', fontWeight: '600', fontFamily: 'var(--font-poppins)', display: 'block', textAlign: 'center', marginBottom: '.25em'}}>
+                        It&apos;s <span data-bolded>FREE</span> to get started!<br />
+                    </span>
+                    <div className={css.pricingSchedule}>
+                        <hr/>
+                        <span data-bolded>$2</span> 
+                        <span>per month for 6 months once you go live</span>
+                        <hr />
+                        <span data-bolded>$15</span> 
+                        <span>per month for life</span>
+                        <hr />
+                        <span data-bolded>X</span>
+                        <span>cancel anytime, no obligations</span>
+                    </div>
+                    {/* <span style={{display: 'block', marginTop: '.5em', textAlign: 'left', fontWeight: 500, color: 'var(--black-gray)'}}>cancel anytime, no obligations</span> */}
+                </article>
+            </div>
+            <form id="form" onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
+                <ErrorLabel error={errors?.phone?.message} className={formLabelClassName}>
+                    <span data-role="label-text">phone number</span>
+                    <span data-role="append-input">
+                        <span style={{padding: '0 .1em'}}>+1</span>
+                        <input 
+                            type="number" 
+                            name="phone" 
+                            ref={phoneRef} 
+                            onChange={(e) => {
+                                const {value} = e.currentTarget
+                                if(value.length > 10){
+                                    e.currentTarget.value = value.slice(0,10)
+                                    return
+                                }
+                                rhfPhoneOnChange(e)
+                            }}
+                            {...restOfPhone}
+                        />
+                    </span>
+                </ErrorLabel>
+                <div className={formLabelClassName}>
+                    <ErrorLabel className={''}>
+                        <span data-role="label-text">password</span>
                         <span data-role="append-input">
-                            <span style={{padding: '0 .1em'}}>+1</span>
-                            <input 
-                                type="number" 
-                                name="phone" 
-                                ref={phoneRef} 
-                                onChange={(e) => {
-                                    const {value} = e.currentTarget
-                                    if(value.length > 10){
-                                        e.currentTarget.value = value.slice(0,10)
-                                        return
-                                    }
-                                    rhfPhoneOnChange(e)
-                                }}
-                                {...restOfPhone}
-                            />
+                            <input type={passwordInputType} name="password" {...register('password')} />
+                            <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
                         </span>
                     </ErrorLabel>
-                    <div className={formLabelClassName}>
-                        <ErrorLabel className={''}>
-                            <span data-role="label-text">password</span>
-                            <span data-role="append-input">
-                                <input type={passwordInputType} name="password" {...register('password')} />
-                                <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
-                            </span>
-                        </ErrorLabel>
-                        <PasswordLiveCheck password={password}/>
-                    </div>
-                    <div className={formLabelClassName}>
-                        <ErrorLabel>
-                            <span data-role="label-text">confirm password</span>
-                            <span data-role="append-input">
-                                <input type={passwordInputType} name="confirm-password" {...register('confirmPassword')} />
-                                <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
-                            </span>
-                        </ErrorLabel>
-                        <p 
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                fontSize: '.89em', 
-                                marginTop: '20px',
-                                padding: '0 8px 0 5px',
-                                fontWeight: '500'
-                            }}
-                        >
-                            <span>
-                                passwords match
-                            </span>
-                            <CompleteCheck style={{height: '.85lh'}} complete={password?.length > 0 && password === confirmPassword}/>
-                        </p>
-                    </div>
-                    <ErrorLabel
+                    <PasswordLiveCheck password={password}/>
+                </div>
+                <div className={formLabelClassName}>
+                    <ErrorLabel>
+                        <span data-role="label-text">confirm password</span>
+                        <span data-role="append-input">
+                            <input type={passwordInputType} name="confirm-password" {...register('confirmPassword')} />
+                            <button type="button" tabIndex="-1" onClick={toggleVisibility} aria-hidden="true"><PasswordVisibilityLock visible={passwordVisible} style={{height: '2lh'}}/></button>
+                        </span>
+                    </ErrorLabel>
+                    <p 
                         style={{
-                            padding: '5px',
-                            fontSize: '.75em',
-                            fontFamily: 'var(--font-sora)',
-                            maxWidth: '350px',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            fontSize: '.89em', 
+                            marginTop: '20px',
+                            padding: '0 8px 0 5px',
+                            fontWeight: '500'
                         }}
                     >
-                        <span
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '10px',
-                            }}
-                        >
-                            <Checkbox name="authorize-text" {...register('authorizeText')} />
-                            <span>agree to receive a text message containing a one-time passcode to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
+                        <span>
+                            passwords match
                         </span>
-                    </ErrorLabel>
-                    <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
-                    {!isSubmitting && formError &&
-                        <p className={css.formError}>
-                            <span data-role="title">Error:</span>
-                            {
-                                Array.isArray(formError) ?
+                        <CompleteCheck style={{height: '.85lh'}} complete={password?.length > 0 && password === confirmPassword}/>
+                    </p>
+                </div>
+                <ErrorLabel
+                    style={{
+                        padding: '5px',
+                        fontSize: '.75em',
+                        fontFamily: 'var(--font-sora)',
+                        maxWidth: '350px',
+                    }}
+                >
+                    <span
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                        }}
+                    >
+                        <Checkbox name="authorize-text" {...register('authorizeText')} />
+                        <span>agree to receive a one-time passcode via text message to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
+                    </span>
+                </ErrorLabel>
+                <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
+                {!isSubmitting && formError &&
+                    <p className={css.formError}>
+                        <span data-role="title">Error:</span>
+                        {
+                            Array.isArray(formError) ?
 
-                                formError.map((error, i) => <span key={i}> {'>'} {error}</span>)
+                            formError.map((error, i) => <span key={i}> {'>'} {error}</span>)
 
-                                :
+                            :
 
-                                <span>{formError}</span>
-                            }
-                        </p>
-                    }
-                    <button type="submit" className={css.submit}>Start Listeing!</button>
+                            <span>{formError}</span>
+                        }
+                    </p>
+                }
+                <button type="submit" className={css.submit}>Start Listeing!</button>
 
-                    <Link href="/auth/login" style={{fontSize: '.7em', fontWeight: '300'}}>already a user? Log in</Link>
-                    {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
-                </form>
-            </div>
-        </main>
+                <Link href="/auth/login" style={{fontSize: '.7em', fontWeight: '300'}}>already a user? Log in</Link>
+                {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
+            </form>
+        </div>
     )
 }
 
