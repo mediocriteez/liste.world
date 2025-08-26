@@ -33,6 +33,15 @@ const TwoFactorAuthentication = () => {
         verifyOtp(code)
     }, [code])
 
+    useEffect(() => {
+        if(!searchParams.has('resend')) return
+
+        const { error } = supabase.auth.resend({
+            type: 'sms',
+            phone: phone
+        })
+    }, [])
+
     const caretToEnd = useCallback(e => {
         const {currentTarget:c} = e 
         const end = c.value.length;
@@ -48,7 +57,7 @@ const TwoFactorAuthentication = () => {
                         <input
                             ref={inputRef} 
                             type="text"
-                            inputMode="numberic"
+                            inputMode="numeric"
                             autoComplete="one-time-code"
                             name="2fa-code" 
                             value={code} 

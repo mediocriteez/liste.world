@@ -21,7 +21,7 @@ const AuthGate = ({children}) => {
 
         const isAuthRoute = pathName.startsWith("/auth")
 
-        if(session === null && !isAuthRoute) router.push(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
+        if(session === null && !isAuthRoute) router.replace(`/auth/login?redirect=${encodeURIComponent(pathName)}`)
         
         if(session && isAuthRoute) router.replace('/dashboard')
 

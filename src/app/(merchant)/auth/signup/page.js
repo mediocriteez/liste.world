@@ -66,7 +66,6 @@ const Signup = () => {
             })
 
             if(error) throw error
-
             const phone = data?.user?.phone
 
             router.push(`/auth/2fa?id=${phone}&signup`)
@@ -205,7 +204,7 @@ const Signup = () => {
                         <span>agree to receive a one-time passcode via text message to the provided phone number to verify your account {'(standard data and message rates may apply)'}</span>
                     </span>
                 </ErrorLabel>
-                <Link href="/about/preprodterms" style={{fontSize: '.7em', fontWeight: '300'}}>review terms of service</Link>
+                <Link href="/about/preprodterms" style={{fontSize: '.85em', fontWeight: '300'}}>review terms of service</Link>
                 {!isSubmitting && formError &&
                     <p className={css.formError}>
                         <span data-role="title">Error:</span>
@@ -222,7 +221,7 @@ const Signup = () => {
                 }
                 <button type="submit" className={css.submit}>Start Listeing!</button>
 
-                <Link href="/auth/login" style={{fontSize: '.7em', fontWeight: '300'}}>already a user? Log in</Link>
+                <Link href="/auth/login" style={{fontSize: '.85em', fontWeight: '300'}}>already a user? Login here</Link>
                 {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
             </form>
         </div>

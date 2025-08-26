@@ -1,0 +1,7 @@
+.form{
+    display: grid;
+    justify-items: center;
+    grid-auto-rows: min-content;
+    gap: 1.6rem;
+    padding-top: 1rem;
+}
