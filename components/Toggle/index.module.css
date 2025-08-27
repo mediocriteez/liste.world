@@ -1,0 +1,100 @@
+.root{
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    cursor: pointer;
+    /* height: 1lh; */
+    
+    /* display: inline-block; */
+    
+    border: none;
+    border-radius: .15em;
+    outline: none;
+    background: var(--light-gray);
+    font-size: 1.5em;
+    font-weight: 500;
+    transition: .25s;
+    margin: .25em;
+}
+
+.root:has(label:nth-child(2) > input:checked){
+    background: var(--shade-col);
+}
+
+.root > label{
+    padding: .1em .5em .2em;
+    position: relative;
+    grid-area: 1 / 1;
+    display: block;
+    text-align: center;
+    /* place-items: center; */
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.root > label > input{
+    position: absolute;
+    inset: 0;
+}
+
+.root > label > input{
+    appearance: none;          /* modern standard */
+    -webkit-appearance: none;  /* Safari/WebKit */
+    -moz-appearance: none;     /* Firefox */
+    
+    /* reset box styles */
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.root > label:nth-child(1){
+    z-index: 2;
+}
+
+.root > label:nth-child(1):has(input:checked) + label{
+    z-index: 3;
+}
+
+.root > label > span[data-role="title"]{
+    transition: .1s;
+}
+
+.root > label:nth-child(2) > span[data-role="title"]{
+    color: var(--off-white);
+}
+
+.root > label:nth-child(1) > span[data-role="title"]{
+    color: transparent;
+    transform: translateX(.25em);
+}
+
+.root > label:nth-child(1):has(input:checked) > span[data-role="title"]{
+    color: var(--black-gray);
+}
+
+.root > label:nth-child(1):has(input:checked) ~ label:nth-child(2) > span[data-role="title"]{
+    color: transparent;
+    transform: translateX(-.25em);
+}
+
+.root span[data-role="indicator"]{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 2px;
+    width: 4px;
+    height: calc(100% - 4px);
+    background: var(--white);
+    transition: .25s;
+}
+
+.root > label:nth-child(2):has(input:checked) ~ span[data-role="indicator"]{
+    left: calc(100% - 6px);
+    background: var(--highlight-col);
+    z-index: 4;
+}

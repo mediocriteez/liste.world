@@ -13,8 +13,10 @@
   /* --highlight-col: #F7E40F;
   --highlight-shade-col: #edc315; */
   --white: #F0FFF7;
+  --off-white: #DDEBE3;
   --black: #0C0718;
-  --light-gray: #6C988C;
+  --light-gray: #B0CCC2;
+  --mid-gray: #6C988C;
   --gray: #386055;
   --black-gray: #25352d;
 
@@ -26,26 +28,31 @@
   --highlight-col: #56E39A;
   --highlight-shade-col: #34B572;
 
-
+  
   --max-width: 1500px;
   --mid-width: 1200px;
   --channel-width: 500px;
-
+  
   --dark-gradient: linear-gradient(
-                        to bottom,
-                        var(--shade-col) 0px,
-                        /* var(--primary-col) 300px, */
-                        /* var(--shade-col) 300px, */
-                        var(--dark-shade-col) 600px
-                    );
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    to bottom,
+    var(--shade-col) 0px,
+    /* var(--primary-col) 300px, */
+    /* var(--shade-col) 300px, */
+    var(--dark-shade-col) 600px
+    );
   }
-} */
+  
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+      }
+      } */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 html,
 body {
@@ -93,10 +100,16 @@ input[type="checkbox"]{
   cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+ul{
+  list-style: none;
+}
+
+button{
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .maxWidth{
@@ -115,17 +128,19 @@ input[type="checkbox"]{
   margin: 0 auto;
 }
 
-ul{
-  list-style: none;
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;       /* prevent line breaks */
+  border: 0;
+  clip: rect(0 0 0 0);       /* legacy browsers */
+  clip-path: inset(50%);     /* modern browsers */
 }
 
-button{
-  outline: none;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-family: inherit;
-}
 
 /* a {
   color: inherit;

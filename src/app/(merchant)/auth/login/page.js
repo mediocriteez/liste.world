@@ -75,7 +75,7 @@ const Login = () => {
     return(
         <div className={classNamesToStr(['channelWidth', 'centered'])} style={{paddingTop: '175px'}}>
             <h2 style={{maxWidth: '350px', margin: '1em auto'}}>Liste<img style={{marginLeft: '2px', height: '.55lh', verticalAlign: 'middle'}} src="/images/logo_clean.svg" /></h2>
-            <h1 style={{maxWidth: '350px', margin: '1em auto'}}>Welcome Back!</h1>
+            <h1 style={{maxWidth: '350px', margin: '1em auto', fontSize: '1.25em'}}>Welcome Back!</h1>
             <form onSubmit={handleSubmit(onSubmit, onSubmitErrors)} autoComplete="off" className={css.form}>
                 <ErrorLabel className={formCSS.primaryText}>
                     <span data-role="label-text">phone number</span>
