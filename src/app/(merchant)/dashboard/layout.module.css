@@ -1,0 +1,6 @@
+.main{
+    width: 100dvw;
+    min-height: 100dvh;
+    background: var(--white);
+    color: var(--black);
+}
