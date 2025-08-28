@@ -1,7 +1,8 @@
 import { classNamesToStr } from "@/utils/index"
 import css from './index.module.css'
+import { forwardRef } from "react"
 
-const Toggle = ({
+const Toggle = forwardRef(({
     name,
     className = '',
     labelText={
@@ -12,16 +13,19 @@ const Toggle = ({
     inputProps = {},
     error,
     ...props
-}) => {
+},
+ref
+) => {
+
     return(
-        <div className={classNamesToStr([css.root, className])} {...props}>
+        <div ref={ref} className={classNamesToStr([css.root, className])} {...props}>
             <label>
                 <span data-role="title">{labelText.no}</span>
                 <input 
                     name={name} 
                     {...inputProps} 
                     type="radio" 
-                    value={false} 
+                    value={false}
                     defaultChecked={ !defaultVal } 
                 />
             </label>
@@ -31,7 +35,7 @@ const Toggle = ({
                     name={name}
                     {...inputProps} 
                     type="radio" 
-                    value={true} 
+                    value={true}
                     defaultChecked={ defaultVal } 
                 />
             </label>
@@ -39,6 +43,6 @@ const Toggle = ({
             {error}
         </div>
     )
-}
+})
 
 export default Toggle

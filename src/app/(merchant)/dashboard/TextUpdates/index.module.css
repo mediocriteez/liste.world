@@ -1,0 +1,26 @@
+.root{
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--off-white);
+}
+
+.root > div{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr min-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.root > legend{
+    margin: 0;
+    padding: 0;
+    position: static;
+    float: none;
+    display: inline;
+}
+
+.root > p[data-role="error"]{
+    margin-top: .5em;
+    color: var(--highlight-shade-col);
+}
