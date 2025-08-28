@@ -45,4 +45,6 @@ ref
     )
 })
 
+Toggle.displayName = 'forwardRef(Toggle)'
+
 export default Toggle
