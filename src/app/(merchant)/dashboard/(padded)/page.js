@@ -2,11 +2,14 @@
 
 import { supabase } from "@/services/supabase/client"
 import css from './page.module.css'
+import formCSS from '@/styles/form.module.css'
 import { classNamesToStr } from "@/utils/index"
 import ErrorLabel from "@/components/ErrorLabel"
 import Toggle from "@/components/Toggle"
 import TextUpdates from "./TextUpdates"
 import Spinner from "@/components/loaders/Spinner"
+import LastUpdated from "./LastUpdated"
+import Link from "next/link"
 
 const MerchantDashboard = ({}) => {
     return(
@@ -21,6 +24,12 @@ const MerchantDashboard = ({}) => {
                     <span data-role="body">By signing up early you&apos;ve eaned 3 free months of Listeing!</span>
                 </h2>
                 <TextUpdates />
+            </article>
+            <article className={css.upToDate}>
+                <h2>Stay up to date</h2>
+                <p>Read recent posts about what we're working on</p>
+                <LastUpdated />
+                <Link href="" className={formCSS.submit}>more</Link>
             </article>
             {/* <button onClick={() => supabase.auth.signOut()}>log out</button> */}
         </div>

@@ -7,7 +7,7 @@
 .nav > button{
     border-radius: 4px;
     padding: .5em;
-    background: var(--gray);
+    background: var(--shade-col);
     color: var(--white);
     font-weight: 500;
 }
@@ -23,7 +23,8 @@
     display: block;
 }
 
-.introText > h2 > span[data-role="title"]{
+.introText > h2 > span[data-role="title"],
+.upToDate > h2{
     text-align: center;
     font-size: 2em;
     font-weight: 700;
@@ -52,4 +53,33 @@
     margin: .75rem 0 2rem 0;
     padding: 0 1rem;
     color: var(--black-gray);
+}
+
+.upToDate{
+    margin: 0 auto;
+    margin-top: 3rem;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 300px;
+    background-image: linear-gradient(to bottom, var(--shade-col), var(--mid-shade-col));
+    color: var(--white);
+    text-align: center;
+}
+
+.upToDate > h2{
+    margin-bottom: 1rem;
+    text-shadow: 0 5px 15px rgb(var(--off-white-vals) / .2);
+}
+
+.upToDate > p{
+    color: var(--off-white);
+}
+
+.upToDate > a{
+    display: inline-block;
+    margin-top: 1rem;
+    width: auto;
+    border-radius: 4px;
+    font-size: 1em;
+    text-decoration: none;
 }

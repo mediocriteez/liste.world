@@ -121,7 +121,7 @@ const Login = () => {
                     }
                     <button type="submit" className={formCSS.submit}>Login</button>
 
-                    <Link href="/auth/signup" style={{fontSize: '.85em', fontWeight: '300'}}>New to Liste? Sign up here</Link>
+                    <Link href="/signup" style={{fontSize: '.85em', fontWeight: '300'}}>New to Liste? Sign up here</Link>
                 </form>
             </div>
         </div>

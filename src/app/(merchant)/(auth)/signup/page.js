@@ -221,7 +221,7 @@ const Signup = () => {
                 }
                 <button type="submit" className={css.submit}>Start Listeing!</button>
 
-                <Link href="/auth/login" style={{fontSize: '.85em', fontWeight: '300'}}>already a user? Login here</Link>
+                <Link href="/login" style={{fontSize: '.85em', fontWeight: '300'}}>already a user? Login here</Link>
                 {/* <button type="button" onClick={() => console.log(getValues())}>log</button> */}
             </form>
         </div>

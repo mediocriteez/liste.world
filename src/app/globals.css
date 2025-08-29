@@ -12,9 +12,12 @@
   /* --shade-col: #014F35; */
   /* --highlight-col: #F7E40F;
   --highlight-shade-col: #edc315; */
+  --off-white-vals: 221 235 227;
+  --black-vals: 12 7 24;
+
   --white: #F0FFF7;
-  --off-white: #DDEBE3;
-  --black: #0C0718;
+  --off-white: rgb(var(--off-white-vals));
+  --black: rgb(var(--black-vals));
   --light-gray: #B0CCC2;
   --mid-gray: #6C988C;
   --gray: #386055;

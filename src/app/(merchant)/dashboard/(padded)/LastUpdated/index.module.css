@@ -1,0 +1,32 @@
+.root{
+    margin-top: 2rem;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--white);
+    color: var(--black-gray);
+    text-align: left;
+    /* box-shadow: inset 0 0 3px rgb(var(--black-vals) / .8); */
+    box-shadow: 0 5px 15px rgb(var(--off-white-vals) / .3);
+
+}
+
+.root > a{
+    color: unset;
+    text-decoration: none;
+}
+
+.root  h3{
+    display: inline-block;
+    /* border-radius: 2px;
+    padding: .5rem 1rem;
+    background: var(--off-white); */
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+.root  p {
+    color: var(--highlight-shade-col);
+    font-weight: 500;
+}
