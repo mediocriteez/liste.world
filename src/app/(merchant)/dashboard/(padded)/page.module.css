@@ -1,0 +1,55 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav > button{
+    border-radius: 4px;
+    padding: .5em;
+    background: var(--gray);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.introText > h2{
+    margin-top: 5rem;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.introText > h2 > span[data-role="title"],
+.introText > h2 > span[data-role="body"]{
+    display: block;
+}
+
+.introText > h2 > span[data-role="title"]{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    font-family: var(--font-poppins);
+    /* color: var(--primary-col); */
+}
+
+.introText > h2 > span[data-role="title"] > img{
+    height: .65lh;
+    vertical-align: middle;
+    transform-origin: center;
+    margin-top: .15em;
+}
+
+.introText > h2 > span[data-role="title"] > img:nth-child(1){
+    padding-right: .1em;
+    transform: rotate(-12deg);
+}
+
+.introText > h2 > span[data-role="title"] > img:nth-child(2){
+    padding-left: .1em;
+    transform: rotate(12deg);
+}
+
+.introText > h2 > span[data-role="body"]{
+    margin: .75rem 0 2rem 0;
+    padding: 0 1rem;
+    color: var(--black-gray);
+}

@@ -6,6 +6,7 @@
 
 .root > div{
     display: grid;
+    gap: .25em;
     grid-auto-flow: column;
     grid-template-columns: 1fr min-content;
     justify-content: center;

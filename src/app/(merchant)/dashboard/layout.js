@@ -1,10 +1,15 @@
 import css from './layout.module.css'
+import PageNotifications from './PageNotifications'
+import PageNotificationProvider from './PageNotifications/Context'
 
 const Layout = ({children}) => {
     return(
-        <main className={css.main}>
-            {children}
-        </main>
+        <PageNotificationProvider>
+            <main className={css.main}>
+                {children}
+            </main>
+            <PageNotifications />
+        </PageNotificationProvider>
     )
 }
 

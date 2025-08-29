@@ -6,10 +6,14 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { supabase } from "@/services/supabase/client"
 import { useAuthContext } from "@/app/AuthContext"
 import Spinner from "@/components/loaders/Spinner"
+import { usePageNotifications } from "@/pageNotifications"
 
 const TextUpdates = ({}) => {
 
     const authContext = useAuthContext()
+    const {
+        addToStack
+    } = usePageNotifications()
     const [initializing, setInitilizing] = useState(true)
     const [toggleError, setToggleError] = useState('')
     const defaultVal = useRef(false)
@@ -52,6 +56,14 @@ const TextUpdates = ({}) => {
             })
             
             if(error) throw error
+
+            const notif = {message: 'settings updated'}
+
+            addToStack(notif)
+
+            // setTimeout(() => addToStack(notif), 300)
+            // setTimeout(() => addToStack(notif), 500)
+
 
         } catch (error) {
             console.error(error)
