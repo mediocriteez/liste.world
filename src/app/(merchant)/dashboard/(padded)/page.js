@@ -27,7 +27,7 @@ const MerchantDashboard = ({}) => {
             </article>
             <article className={css.upToDate}>
                 <h2>Stay up to date</h2>
-                <p>Read recent posts about what we're working on</p>
+                <p>Read recent posts about what we&apos;re working on</p>
                 <LastUpdated />
                 <Link href="" className={formCSS.submit}>more</Link>
             </article>
