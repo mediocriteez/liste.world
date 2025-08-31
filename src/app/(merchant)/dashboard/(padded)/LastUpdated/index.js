@@ -6,15 +6,17 @@ import css from './index.module.css'
 import Link from "next/link"
 
 const LastUpdated = ({}) => {
-    const [postTitle, setPostTitle] = useState('')
+    const [postID, setPostID] = useState('#')
+    const [postTitle, setPostTitle] = useState('----------')
     const [lastUpdated, setLastUpdated] = useState('-- / -- / --')
 
     const fetchLastUpdated = useCallback(async () => {
         try {
-            const {data, error} = await supabase.from('posts').select('title, created_at').order('created_at', {ascending: false}).limit(1).single()
+            const {data, error} = await supabase.from('posts').select('id, title, created_at').order('created_at', {ascending: false}).limit(1).single()
             if(error) throw error
-            const {created_at, title} = data
-
+            const {id, created_at, title} = data
+            
+            setPostID(id)
             setPostTitle(title)
 
             const date = new Date(created_at)
@@ -37,12 +39,13 @@ const LastUpdated = ({}) => {
     }, [])
 
     return(
-        <article className={css.root}>
-            <Link href="">
-                <h3>{postTitle}</h3>
-                <p>{lastUpdated}</p>
-            </Link>
-        </article>
+        <Link href="" className={css.root}>
+            <article >
+                    <p className={css.postID}>{postID}</p>
+                    <h3>{postTitle}</h3>
+                    <p className={css.date}>{lastUpdated}</p>
+            </article>
+        </Link>
     )
 }
 

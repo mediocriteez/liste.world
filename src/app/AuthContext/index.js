@@ -28,6 +28,7 @@ const AuthContext = ({children}) => {
                 // handle password recovery event
             } else if (event === 'TOKEN_REFRESHED') {
                 // handle token refreshed event
+                setSession(session)
             } else if (event === 'USER_UPDATED') {
                 // handle user updated event
             }
