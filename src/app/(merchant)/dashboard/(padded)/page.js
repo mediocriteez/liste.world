@@ -29,7 +29,7 @@ const MerchantDashboard = ({}) => {
                 <h2>Stay up to date</h2>
                 <p>Read recent posts about what we&apos;re working on</p>
                 <LastUpdated />
-                <Link href="" className={css.moreLink}>more {'>'}</Link>
+                <Link href="/blog" className={css.moreLink}>more {'>'}</Link>
             </article>
             {/* <button onClick={() => supabase.auth.signOut()}>log out</button> */}
         </div>
