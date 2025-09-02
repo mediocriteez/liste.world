@@ -4,7 +4,7 @@ import Toggle from "@/components/Toggle"
 import css from './index.module.css'
 import { useCallback, useEffect, useRef, useState } from "react"
 import { supabase } from "@/services/supabase/client"
-import { useAuthContext } from "@/app/AuthContext"
+import { useAuthContext } from "@/app/(merchant)/AuthContext"
 import Spinner from "@/components/loaders/Spinner"
 import { usePageNotifications } from "@/pageNotifications"
 

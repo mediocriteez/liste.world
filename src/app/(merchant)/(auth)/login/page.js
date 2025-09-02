@@ -1,6 +1,6 @@
 "use client"
 
-import { useAuthContext } from "@/app/AuthContext"
+import { useAuthContext } from "@/app/(merchant)/AuthContext"
 import ErrorLabel from "@/components/ErrorLabel"
 import { useCallback, useMemo, useState } from "react"
 import { useForm } from "react-hook-form"

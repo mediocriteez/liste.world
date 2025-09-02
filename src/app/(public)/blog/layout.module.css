@@ -1,0 +1,12 @@
+.main{
+    width: 100dvw;
+    min-height: 100dvh;
+
+    background-image: linear-gradient(
+                            to bottom,
+                            var(--off-white) 0px,
+                            /* var(--primary-col) 300px, */
+                            /* var(--shade-col) 300px, */
+                            var(--light-gray) 600px
+                        );
+}

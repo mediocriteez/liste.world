@@ -1,0 +1,25 @@
+.root{
+    position: fixed;
+    top: .5rem;
+    width: 100dvw;
+}
+
+.contentContainer{
+    border-radius: 8px;
+    padding: .5rem 1rem;
+    background: var(--white);
+}
+
+.brandName{
+    color: var(--black);
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-family: var(--font-kanit);
+    text-decoration: none;
+}
+
+.brandName > img{
+    margin-left: .1em;
+    height: .45lh;
+    vertical-align: middle;
+}

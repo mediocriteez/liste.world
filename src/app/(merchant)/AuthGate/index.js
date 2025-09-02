@@ -1,6 +1,6 @@
 "use client"
 
-import { useAuthContext } from "@/app/AuthContext"
+import { useAuthContext } from "@/app/(merchant)/AuthContext"
 import PageLoader from "@/components/PageLoader"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"

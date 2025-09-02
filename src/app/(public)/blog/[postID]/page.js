@@ -1,7 +1,7 @@
 import { supabase } from '@/services/supabase/client'
 import css from './page.module.css'
-import Content from './Content'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { classNamesToStr } from '@/utils/index'
 
 const Page = async ({params}) => {
 
@@ -21,10 +21,10 @@ const Page = async ({params}) => {
     }
 
     return(
-        <main className={css.main}>
+        <div className={classNamesToStr(['channelWidth', 'centered', css.contentContainer])}>
             <h1>{title}</h1>
             <MDXRemote source={body} />
-        </main>
+        </div>
     )
 }
 

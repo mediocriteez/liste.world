@@ -1,7 +1,7 @@
 import { Crimson_Text, DM_Serif_Text, Domine, Geist, Geist_Mono, Kanit, Neuton, Old_Standard_TT, Outfit, Poppins, Sora, Ultra } from "next/font/google";
 import "./globals.css";
 // import 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css';
-import AuthContext from "./AuthContext";
+import AuthContext from "./(merchant)/AuthContext";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",

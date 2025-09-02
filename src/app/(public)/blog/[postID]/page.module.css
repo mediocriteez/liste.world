@@ -1,0 +1,22 @@
+.contentContainer{
+    padding: 5rem 1rem;
+    color: var(--black);
+}
+
+.contentContainer > h1{
+    margin: 2rem 0;
+    color: var(--black-gray);
+}
+
+.contentContainer > h2{
+    text-align: center;
+}
+
+.contentContainer > h3{
+    margin-left: 1rem;
+    color: var(--gray);
+}
+
+.contentContainer > p{
+    margin: 1rem;
+}
