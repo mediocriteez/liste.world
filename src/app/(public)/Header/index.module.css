@@ -1,7 +1,10 @@
 .root{
+    box-sizing: border-box;
     position: fixed;
     top: .5rem;
+    padding: 0 .5rem;
     width: 100dvw;
+    z-index: 2000;
 }
 
 .contentContainer{

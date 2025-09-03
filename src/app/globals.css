@@ -34,6 +34,7 @@
   
   --max-width: 1500px;
   --mid-width: 1200px;
+  --channel-max-width: 800px;
   --channel-width: 500px;
   
   --dark-gradient: linear-gradient(
@@ -66,6 +67,7 @@ body {
   font-size: 16px;
   font-family: var(--font-sora);
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -122,6 +124,10 @@ button{
 
 .channelWidth{
   max-width: var(--channel-width);
+}
+
+.channelMaxWidth{
+  max-width: var(--channel-max-width);
 }
 
 .midWidth{
