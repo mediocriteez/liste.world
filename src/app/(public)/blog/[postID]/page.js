@@ -42,9 +42,9 @@ const Page = async ({params}) => {
             <div className={css.headerContent}>
                 <h1>{title}</h1>
                 <article className={css.contentMeta}>
-                    <p>Jacob Winter <span>- founder/ceo</span></p>
-                    <p>posted: {createdAt}</p>
-                    <p>last updated: {updatedAt}</p>
+                    <p><img data-role="author-avi" src=""/><span data-role="author">Jacob Winter</span><span data-role="author-label"> - founder/CEO</span></p>
+                    <p>posted: <span data-role="focus">{createdAt}</span></p>
+                    <p>last updated: <span data-role="focus">{updatedAt}</span></p>
                 </article>
             </div>
             <MDXRemote source={body} />
