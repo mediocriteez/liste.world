@@ -48,6 +48,7 @@ const Page = async ({params}) => {
                 </article>
             </div>
             <MDXRemote source={body} />
+            
         </div>
     )
 }
