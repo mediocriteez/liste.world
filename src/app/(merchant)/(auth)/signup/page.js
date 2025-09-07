@@ -90,7 +90,7 @@ const Signup = () => {
     }, [])
     // console.log(errors)
     return(
-        <div className={classNamesToStr(['channelWidth', 'centered'])}>
+        <div className={classNamesToStr(['channelWidth', 'centered', css.contentContainer])}>
             <div className={css.header}>
                 <h1 className={css.h1}><Link href="#form">Sign Up<br/></Link></h1>
                 <h2 className={css.introText}>

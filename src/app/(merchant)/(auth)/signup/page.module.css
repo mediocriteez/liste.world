@@ -1,4 +1,8 @@
 
+.contentContainer{
+    padding-bottom: 4rem;
+}
+
 .header{
     display: grid;
     /* flex-direction: column; */
