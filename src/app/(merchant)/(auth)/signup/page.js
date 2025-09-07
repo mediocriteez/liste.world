@@ -118,8 +118,8 @@ const Signup = () => {
                     </span>
                     <div className={css.pricingSchedule}>
                         <hr/>
-                        <span data-bolded>$2</span> 
-                        <span>per month for 6 months once you go live</span>
+                        <span data-bolded>$1</span> 
+                        <span>per month for 3 months once you go live</span>
                         <hr />
                         <span data-bolded>$15</span> 
                         <span>per month for life</span>

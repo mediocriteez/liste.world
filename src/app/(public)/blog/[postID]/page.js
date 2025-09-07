@@ -2,6 +2,7 @@ import { supabase } from '@/services/supabase/client'
 import css from './page.module.css'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { classNamesToStr } from '@/utils/index'
+import mdxComponents from './components'
 
 const Page = async ({params}) => {
 
@@ -47,7 +48,7 @@ const Page = async ({params}) => {
                     <p>last updated: <span data-role="focus">{updatedAt}</span></p>
                 </article>
             </div>
-            <MDXRemote source={body} />
+            <MDXRemote source={body} components={mdxComponents}/>
             
         </div>
     )
