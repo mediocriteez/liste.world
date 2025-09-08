@@ -101,3 +101,7 @@
 .contentContainer b{
     color: var(--mid-shade-col);
 }
+
+.contentContainer a{
+    color: var(--highlight-shade-col);
+}
