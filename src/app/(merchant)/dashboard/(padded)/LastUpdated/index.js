@@ -40,7 +40,7 @@ const LastUpdated = ({}) => {
 
     return(
         <Link href={`/blog/${postID}`} className={css.root}>
-            <article >
+            <article>
                     <p className={css.postID}>{postID}</p>
                     <h3>{postTitle}</h3>
                     <p className={css.date}>{lastUpdated}</p>

@@ -83,6 +83,7 @@
     color: var(--mid-shade-col);
     background: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
     transition: .2s;
+    text-decoration: none;
 }
 
 .submit:hover{

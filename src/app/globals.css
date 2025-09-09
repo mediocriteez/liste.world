@@ -14,6 +14,8 @@
   --highlight-shade-col: #edc315; */
   --off-white-vals: 221 235 227;
   --black-vals: 12 7 24;
+  --highlight-col-vals: 86 227 154;
+  --highlight-shade-col-vals: 52 181 114;
 
   --white: #F0FFF7;
   --off-white: rgb(var(--off-white-vals));
@@ -28,8 +30,8 @@
   --mid-shade-col: #14163D;
   --dark-shade-col: #120C1D;
   
-  --highlight-col: #56E39A;
-  --highlight-shade-col: #34B572;
+  --highlight-col: rgb(var(--highlight-col-vals));
+  --highlight-shade-col: rgb(var(--highlight-shade-col-vals));
 
   
   --max-width: 1500px;
@@ -136,6 +138,10 @@ button{
 
 .centered{
   margin: 0 auto;
+}
+
+.onWhiteShadow{
+  box-shadow: 0 0px 10px rgb(var(--off-white-vals) / .8);
 }
 
 .visually-hidden {
