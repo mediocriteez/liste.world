@@ -6,7 +6,6 @@ const Footer = ({}) => {
     return(
         <footer className={css.root}>
             <div className={classNamesToStr(['midWidth', 'centered'])}>
-                <h2>Developed by <a href="https://www.flowstate.miami" target="_blank" rel="noreferrer">Flow State Software LLC - Miami, FL</a></h2>
                 <ul>
                     <li>
                         <Link href="/login">log in</Link><br />
@@ -21,6 +20,7 @@ const Footer = ({}) => {
                         <Link href="/about/preprodterms">Terms of Service and Privacy Policy</Link>
                     </li>
                 </ul>
+                <h2>Developed by <a href="https://www.flowstate.miami" target="_blank" rel="noreferrer">Flow State Software LLC - Miami, FL</a></h2>
             </div>
         </footer>
     )

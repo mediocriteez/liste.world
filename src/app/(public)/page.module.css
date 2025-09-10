@@ -48,11 +48,11 @@
   margin: 1rem auto 6rem;
   border-radius: 8px;
   padding: 1rem;
-  max-width: 350px;
+  max-width: 450px;
   background: var(--primary-col);
   background-image: linear-gradient(170deg, var(--primary-col), var(--shade-col));
   color: var(--off-white);
-  box-shadow: 15px 15px 0 rgb(var(--highlight-shade-col-vals) / .8), -15px -15px 0 rgb(var(--highlight-col-vals) / .8);
+  box-shadow: 12px 12px 0 rgb(var(--highlight-shade-col-vals) / .8), -12px -12px 0 rgb(var(--highlight-col-vals) / .8);
 }
 
 .signUpNow > h2{

@@ -8,7 +8,7 @@
 
 .root h2{
     /* text-align: center; */
-    margin: 1rem 0;
+    margin: 1rem;
 }
 
 .root ul{
@@ -16,4 +16,5 @@
     grid-auto-rows: min-content;
     gap: .5rem;
     margin: 2rem 0;
+    padding: 1rem;
 }

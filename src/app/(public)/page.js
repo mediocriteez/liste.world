@@ -16,7 +16,7 @@ export default function Home() {
         <section className={css.hero}>
           <h1>Simply Selling</h1>
           <h2>Build and publish an online store you&apos;re proud of in hours not days</h2>
-          <p>Liste takes stress out of the equation, let&apos;s you create the pages you want, and handles all the rest!</p>
+          <p>Liste takes stress out of the equation, let&apos;s you create the pages you want, and handles all the rest.</p>
         </section>
         <section className={css.blogFeature}>
           <h2>Stay up to date on our build progress</h2>

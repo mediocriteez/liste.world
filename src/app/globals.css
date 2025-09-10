@@ -46,8 +46,11 @@
     /* var(--shade-col) 300px, */
     var(--dark-shade-col) 600px
     );
-    
+
     --highlight-gradient: linear-gradient(170deg, var(--highlight-col), var(--highlight-shade-col));
+  
+    --feature-gradient: linear-gradient(30deg, var(--white) 30%, var(--highlight-col));
+     
   }
 
    

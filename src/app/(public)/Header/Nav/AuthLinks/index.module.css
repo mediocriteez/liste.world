@@ -1,0 +1,21 @@
+.root{
+    display: flex;
+    gap: .5em;
+}
+
+.root > a {
+    border-radius: 4px;
+    padding: .4em .7em;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--mid-gray);
+}
+
+.root > a[data-appearance="feature"]{
+    background-image: linear-gradient(30deg, var(--black-gray), var(--primary-col));
+
+    color: var(--white);
+}
+
