@@ -58,12 +58,13 @@
 .signUpNow > h2{
   /* color: var(--highlight-col); */
   /* text-decoration: underline; */
+  font-size: 2em;
 }
 
 .signUpNow > p{
   text-align: center;
   width: 100%;
-  font-size: 1.15em;
+  font-size: 1.25em;
   /* color: var(--white); */
 }
 
