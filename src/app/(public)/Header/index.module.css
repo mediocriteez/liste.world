@@ -10,7 +10,7 @@
 .contentContainer{
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    padding: .25rem 1rem .5rem;
+    padding: .5rem 1rem;
     background: var(--white);
 }
 
