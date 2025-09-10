@@ -10,7 +10,7 @@ export default function Home() {
       <div className={classNamesToStr(['midWidth', 'centered', css.contentContainer])}>
         <article className={classNamesToStr([css.signUpNow, 'onWhiteShadow'])}>
           <h2>Liste is currently open for pre-production sign up</h2>
-          <p>Earn <span>3 Months</span> of free Listeing!</p>
+          <p>Earn <span>3 Months</span> of free Listeing by signing up early!</p>
           <Link href="/signup" className={classNamesToStr([formCSS.submit, css.signUpNowButton])} style={{width: 'auto', fontSize: '1.25em'}}>Sign Up Now</Link>
         </article>
         <section className={css.hero}>
