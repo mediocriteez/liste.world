@@ -46,7 +46,11 @@
     /* var(--shade-col) 300px, */
     var(--dark-shade-col) 600px
     );
+    
+    --highlight-gradient: linear-gradient(170deg, var(--highlight-col), var(--highlight-shade-col));
   }
+
+   
   
   /* @media (prefers-color-scheme: dark) {
     :root {
