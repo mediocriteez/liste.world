@@ -2,10 +2,9 @@
     box-sizing: border-box;
     position: fixed;
     top: 0;
-    padding: 0 .5rem;
+    /* padding: 0 .5rem; */
     width: 100dvw;
     z-index: 2000;
-    box-shadow: 0 -2px 0 var(--white);
 }
 
 .contentContainer{
@@ -15,7 +14,9 @@
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     padding: .5rem 1rem;
-    background: var(--white);
+    background: rgb(var(--white-vals) / .8);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 0 var(--white);
 }
 
 .brandName{

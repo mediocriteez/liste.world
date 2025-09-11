@@ -4,6 +4,32 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { classNamesToStr } from '@/utils/index'
 import mdxComponents from './components'
 
+export const dynamic = 'force-static';
+
+async function getPost(postID) {
+
+  const url =   `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/posts` +
+                `?select=title,created_at,updated_at,body` +
+                `&id=eq.${postID}`
+
+                console.log(url)
+
+  const res = await fetch(url, {
+    headers: {
+      apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON}`,
+    },
+    cache: 'force-cache',
+    next: { tags: ['posts', `post:${postID}`] },
+  })
+
+  console.log(res)
+
+  if (!res.ok) throw new Error(`Failed to fetch post ${postID}`)
+  const rows = await res.json()
+  return rows?.[0] ?? null
+}
+
 const Page = async ({params}) => {
 
     const {postID} = await params
@@ -11,8 +37,8 @@ const Page = async ({params}) => {
     let title, body, createdAt, updatedAt
 
     try{
-        const {data, error} = await supabase.from('posts').select('title, created_at, updated_at, body').eq('id', postID).single()
-        if(error) throw error
+        const data = await getPost(postID)
+        if(data === null) return null
         
         title = data.title
         body = data.body
@@ -34,8 +60,8 @@ const Page = async ({params}) => {
                     String(dateUpdated.getFullYear()).slice(-2) // last 2 digits
                 }`
     }catch(e){
-        console.error(error?.message)
-        console.error(error)
+        console.error(e?.message)
+        console.error(e)
     }
 
     return(
